@@ -66,12 +66,13 @@ footer{color:#f3e5b4;text-align:center;font-size:12px;padding:6px 0 26px}
 #reg input,#reg select,#reg textarea{font:700 14px 'Trebuchet MS',sans-serif;color:#1d120a;background:#fffdf3;border:2px solid #c9a35a;border-radius:8px;padding:6px 8px}
 #reg textarea{width:100%;box-sizing:border-box}
 #rt{width:100%;border-collapse:collapse}#rt th{text-align:left;font-size:13px;color:#5c3613;padding:4px}#rt td{padding:3px}
-#rt td:first-child input{width:100%;box-sizing:border-box}#rt input[type=number]{width:80px}
+#rt td:first-child{width:55%}#rt td:first-child input{width:100%;box-sizing:border-box}#rt input[type=number]{width:72px;box-sizing:border-box}#rt select{max-width:120px}
+@media(max-width:700px){#rt input[type=number]{width:56px}#rt select{max-width:96px;font-size:12px}#reg .regf input{flex:1;min-width:0}}
 #rt .x{background:none;border:0;color:#a33;font-weight:900;font-size:18px;cursor:pointer}
 #rsum{font-weight:800;color:#5c3613}#rmsg{font-weight:800}
 .rules{font-size:13px;color:#5c3613;margin-top:10px}
-@media(max-width:700px){#sim .cols{grid-template-columns:1fr}#mix .cols{grid-template-columns:1fr}.row{grid-template-columns:1fr}.lab{text-align:left}.title h1{font-size:28px}section{border-width:8px;padding:12px}}</style></head><body>
-<header><div class="title"><h1>Códice de Empires Reborn</h1><p>649 unidades</p></div></header>
+@media(max-width:700px){#sim .cols{grid-template-columns:1fr}#mix .cols{grid-template-columns:1fr}.row{grid-template-columns:1fr}.lab{text-align:left}.title h1{font-size:28px}section{border-width:8px;padding:12px}}.nav{display:inline-block;margin-top:10px;font:800 15px 'Trebuchet MS',sans-serif;color:#fff3cf;background:linear-gradient(#2c6b58,#174a3c);border:2px solid #e5b445;border-radius:10px;padding:8px 16px;text-decoration:none}.nav:hover{filter:brightness(1.15)}</style></head><body>
+<header><div class="title"><h1>Códice de Empires Reborn</h1><p>649 unidades</p><a class="nav" href="mezclador.html">🧪 Soul Mixer del gremio</a></div></header>
 <div class="bar" id="bar">
  <input id="q" type="search" placeholder="Buscar unidad o habilidad…">
  <select id="col"><option value="">Todas las colecciones</option><option>ESPADAS</option><option>ESPADAS II</option><option>ARQUEROS</option><option>ARQUEROS II</option><option>ARQUEROS III</option><option>CABALLEROS</option><option>UNIDADES DE APOYO</option><option>UNIDADES ESPECIALES I</option><option>UNIDADES ESPECIALES II</option><option>UNIDADES ESPECIALES III</option><option>UNIDADES ESPECIALES IV</option><option>MAGOS</option><option>MAGOS II</option><option>UNIDADES DE CASTILLO</option><option>ARMAS DE ASEDIO</option><option>BESTIAS ORIGINALES</option><option>HÉROES</option><option>HÉROES II</option><option>HÉROES III</option><option>TROLES I</option><option>TROLES II</option><option>TROLES III</option><option>ARMAS DE ASEDIO TROL</option><option>ORCOS OSCUROS I</option><option>ORCOS OSCUROS II</option><option>ORCOS OSCUROS III</option><option>NECROS I</option><option>NECROS II</option><option>NECROS III</option><option>NECROS IV</option><option>NECRO V</option><option>DRAGGIES</option><option>DRAGGIES II</option><option>DRAGGIES III</option><option>DRAGGIES IV</option><option>DRAGGIES V</option><option>DRAGGIES VI</option><option>DRAGONES</option><option>DRAGONES II</option><option>DRAGONES III</option><option>DRAGONES IV</option><option>DRAGONES V</option><option>DRAGONES VI</option><option>DRAGONES VII</option><option>DRAGONES VIII</option><option>JINETES</option><option>JINETES DE DRAGÓN I</option><option>JINETES DE DRAGÓN II</option><option>JINETES DE DRAGÓN III</option><option>JINETES DE DRAGÓN IV</option><option>JINETES DE DRAGÓN V</option><option>JINETES DE DRAGÓN VI</option><option>JINETES DE DRAGÓN VII</option><option>CHINOS Y AZTECAS</option><option>EGIPCIOS</option><option>FARAONES</option><option>FARAONES II</option><option>TURCOS</option><option>ATLÁNTIDA</option><option>ELFOS</option><option>ELFOS II</option><option>ELFOS IMPERIALES I</option><option>ELFOS IMPERIALES II</option><option>ELFOS IMPERIALES III</option><option>INFIERNO</option><option>CELESTIALES</option><option>CELESTIALES II</option><option>ALADOS</option><option>MASCOTAS</option><option>T-REX</option><option>FÉNIX</option><option>MONSTRUOS</option><option>MONSTRUOS II</option><option>MONSTRUOS III</option><option>MONSTRUOS IV</option><option>MONSTRUOS V</option><option>GÓLEMS</option><option>GUERREROS PESADOS</option><option>GUERREROS BRUTALES</option><option>HALLOWEEN</option><option>HALLOWEEN II</option><option>MITOLÓGICOS</option><option>MITOLÓGICOS II</option><option>MITOLÓGICOS III</option><option>MITOLÓGICOS IV</option><option>MITOLÓGICOS V</option><option>GLADIADORES I</option><option>GLADIADORES II</option><option>GLADIADORES III</option><option>GLADIADORES IV</option><option>BAHAMUT DEL CIELO</option><option>DRAGONES EXTREMOS VERDES</option><option>DRAGONES EXTREMOS ELÉCTRICOS</option><option>DRAGONES EXTREMOS DORADOS</option><option>DRAGONES EXTREMOS DE FUEGO</option><option>DRAGONES EXTREMOS TORO</option><option>DRAGONES EXTREMOS DE HIELO</option><option>DRAGONES EXTREMOS DEL BOSQUE</option><option>DRAGONES EXTREMOS DE VIENTO</option><option>DRAGONES EXTREMOS DEL ALMA</option><option>DRAGONES ÉPICOS DORADOS</option><option>DRAGONES ÉPICOS NEGROS</option><option>DRAGONES ÉPICOS ELÉCTRICOS</option><option>DRAGONES ÉPICOS JOYA</option><option>DRAGONES ÉPICOS AL ROJO VIVO</option><option>DRAGONES ÉPICOS NEÓN</option><option>DRAGONES ÉPICOS CALAVERA</option><option>DRAGONES ÉPICOS SHOGUN</option><option>DRAGONES ÉPICOS SHOGUN OSCURO</option><option>DRAGONES ÉPICOS TAIJI</option><option>DRAGONES ÉPICOS DEMONIO NEGRO</option><option>DJINNS ROJOS</option><option>DJINNS AZULES</option><option>FUEGO Y OSCURIDAD</option><option>BOSQUE Y TIERRA</option><option>AGUA Y HIELO</option><option>LUZ Y SOMBRA</option><option>ALMA Y VIENTO</option><option>DRAGONES SALVAJES ABRASADORES</option><option>DRAGONES SALVAJES DE CHOQUE</option><option>DRAGONES SALVAJES DE ROCA</option><option>VIKINGOS</option><option>DRAGONES SALVAJES DE DIAMANTE</option><option>DRAGONES SALVAJES ESPACIALES</option><option>DRAGONES DE LA FORJA INFERNAL</option><option>DRAGONES SALVAJES ENGENDRO</option><option>CABALLEROS II</option><option>UNIDADES DE APOYO II</option><option>ARMAS DE ASEDIO II</option><option>TROLES IV</option><option>UNIDADES ESPECIALES V</option><option>INFIERNO II</option><option>HALLOWEEN III</option><option>MITOLÓGICOS VI</option><option>FARAONES III</option><option>FARAONES IV</option><option>MONSTRUOS VI</option><option>TORBELLINOS</option><option>ESBIRROS ELEMENTALES</option><option>GÉNESIS I</option><option>GÉNESIS II</option><option>DIOSES MENORES</option><option>DRAGGIES VII</option><option>DRAGONES ÉPICOS ENEL</option><option>DRAGONES ÉPICOS NEBULOSA</option><option>DRAGONES ÉPICOS DEL TRUENO</option><option>DRAGONES SALVAJES</option><option>DRAGONES ÉPICOS LÁSER</option><option>DRAGONES DE PASCUA</option><option>DRAGONES ANCESTRALES</option><option>DRAGONES ANCESTRALES CHAMÁN</option><option>DRAGONES SAN JORGE</option><option>DRAGONES ANCESTRALES RÚNICOS</option><option>DRAGONES ANCESTRALES CADÁVER</option><option>DRAGONES ANCESTRALES NÚCLEO</option><option>DRAGONES ANCESTRALES INFERNALES</option><option>DRAGONES ANCESTRALES ENT</option><option>DRAGONES ANCESTRALES DEL HORROR</option><option>DRAGONES BAHAMUT ÍGNEOS</option><option>DRAGONES EXTREMOS ESPECTRALES</option><option>DRAGONES ÉPICOS FANTASMA</option><option>DRAGONES ENEL NOCTURNOS</option><option>DRAGONES BAHAMUT ACUÁTICOS</option><option>DRAGONES DINASTÍA DE MARFIL</option><option>DRAGONES EXTREMOS DE ROCA</option><option>DRAGONES FORJA DEL TRUENO</option><option>DRAGONES ANCESTRALES CERBERO</option><option>DRAGONES ANCESTRALES LOBO</option><option>DRAGONES DE ARMADURA ROJA</option><option>DRAGONES DE ARMADURA DORADA</option><option>DRAGONES ANCESTRALES DEL ABISMO</option><option>DRAGONES DE ARMADURA DE PLATINO</option><option>DRAGONES DE ARMADURA DE TORO</option><option>DRAGONES FORJA NOCTURNA</option><option>DRAGONES ANCESTRALES DEMONÍACOS</option><option>DRAGONES DEL HORROR OSCURO</option></select>
@@ -83,40 +84,7 @@ footer{color:#f3e5b4;text-align:center;font-size:12px;padding:6px 0 26px}
  <select id="so"><option value="">Orden de la colección</option><option value="pw">Mayor poder</option><option value="a">Mayor ataque</option><option value="l">Mayor vida</option><option value="r">Mayor alcance</option><option value="v">Mayor velocidad</option><option value="n">Nombre (A-Z)</option></select>
  <span id="cnt"></span><button id="rs">Limpiar</button>
 </div>
-<main><section id="mix"><div class="ban">Ruta a un dragón</div>
-<p class="note">Elige el dragón que quieres y anota tus Legendarias: el Códice calcula qué pareja lo puede dar y, si aún no llegas, la escalera de mezclas para alcanzarlo.</p>
-<div class="cols">
- <div>
-  <h5>1. Dragón objetivo</h5>
-  <input id="tg" list="dl" placeholder="Escribe un dragón o draggy…" style="width:100%">
-  <h5 style="margin-top:14px">2. Mis Legendarias (★★★★★)</h5>
-  <div style="display:flex;gap:6px"><input id="addu" list="dla" placeholder="Agregar unidad…" style="flex:1"><button class="b" id="addb">Agregar</button></div>
-  <div class="chips" id="inv"></div>
-  <div class="rules">Reglas del Soul Mixer: el resultado tiene entre el 55 % y el 90 % del poder sumado de las dos tropas · solo se mezclan tropas de escalones vecinos (≤100 · 100–300 · 300–1000 · 1000–2000 · 2000+) · dos Legendarias dan 100 % Legendaria · los jinetes de dragón no entran ni salen · con piedras del alma los padres se conservan.</div>
- </div>
- <div><h5>3. Cómo conseguirlo</h5><div class="out" id="res">Elige un dragón para ver la ruta.</div></div>
-</div>
-<datalist id="dl"></datalist><datalist id="dla"></datalist></section><section id="sim"><div class="ban">Simulador del Soul Mixer</div>
-<p class="note">Elige dos unidades y mira si se pueden mezclar y qué podría salir.</p>
-<div class="cols">
- <div>
-  <h5>Primera tropa</h5><input id="s1" list="dla" placeholder="Escribe una unidad…" style="width:100%">
-  <h5 style="margin-top:12px">Segunda tropa</h5><input id="s2" list="dla" placeholder="Escribe una unidad…" style="width:100%">
-  <h5 style="margin-top:12px">Rareza de las dos</h5>
-  <select id="sr" style="width:100%"><option value="auto">Automática (según lo conocido)</option><option value="LL">Las dos son Legendarias</option><option value="X">Al menos una no es Legendaria</option></select>
-  <div class="rules">Los jinetes de dragón no entran ni salen del mezclador. El juego elige un subconjunto fijo de la franja para cada pareja: la lista real puede ser más corta. Las tropas que metes no salen como resultado.</div>
- </div>
- <div><h5>Resultado</h5><div class="out" id="sres">Elige dos unidades.</div></div>
-</div>
-<div id="reg"><h5>Registrar esta mezcla en la base del gremio</h5>
- <p class="note" id="gst" style="text-align:left;margin:0 0 8px"></p>
- <p class="note" style="text-align:left;margin:0 0 8px">Elige arriba las dos tropas, abre «Posibles resultados» en el juego y copia cada resultado con su porcentaje.</p>
- <div class="regf"><input id="rj" placeholder="Tu nombre en el juego"><input id="rc" type="password" placeholder="Código del gremio"></div>
- <table id="rt"><thead><tr><th>Resultado</th><th>%</th><th>Rareza</th><th></th></tr></thead><tbody></tbody></table>
- <div class="regf"><button class="b" id="radd">+ Resultado</button><span id="rsum"></span></div>
- <textarea id="rn" rows="2" placeholder="Notas (opcional): piedras que pidió, horas, qué salió…"></textarea>
- <div class="regf"><button class="b" id="rsend">Enviar mezcla</button><span id="rmsg"></span></div>
-</div></section><section><div class="ban">Colección de unidades</div><div class="row" data-c="ESPADAS"><div class="lab">ESPADAS<small>5 unidades</small></div><div class="grid"><div class="card" data-id="509" data-n="lancero" data-pw="32" data-a="8" data-l="40" data-r="1" data-v="3" data-t="c" data-g="Infantry" data-k="" data-f="0" data-h="n" data-ht="">
+<main><section><div class="ban">Colección de unidades</div><div class="row" data-c="ESPADAS"><div class="lab">ESPADAS<small>5 unidades</small></div><div class="grid"><div class="card" data-id="509" data-n="lancero" data-pw="32" data-a="8" data-l="40" data-r="1" data-v="3" data-t="c" data-g="Infantry" data-k="" data-f="0" data-h="n" data-ht="">
   <div class="img"><img src="data:image/webp;base64,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" alt=""></div>
   <h4>Lancero</h4>
   <div class="tags"><span class="tag">Cuerpo a cuerpo</span><span class="tag">Infantería</span></div>
@@ -7968,126 +7936,8 @@ function run(){
 $('rs').onclick=()=>{$('q').value='';$('pmin').value='';$('pmax').value='';['col','tp','gr','hb','so'].forEach(i=>$(i).value='');$('fl').checked=false;run()};
 run();
 
-// ---- Ruta a un dragón ----
-const U=new Map(); document.querySelectorAll('.card').forEach(c=>{if(!U.has(c.dataset.id))U.set(c.dataset.id,{id:c.dataset.id,n:c.querySelector('h4').textContent,pw:+c.dataset.pw,g:c.dataset.g})});
-const byName=new Map([...U.values()].map(u=>[u.n.toLowerCase(),u]));
-const DRG=[...U.values()].filter(u=>['Dragon','Draggy'].includes(u.g)).sort((a,b)=>a.pw-b.pw);
-$('dl').innerHTML=DRG.map(u=>`<option value="${u.n}">${u.pw.toLocaleString('es')}</option>`).join('');
-$('dla').innerHTML=[...U.values()].sort((a,b)=>a.n.localeCompare(b.n)).map(u=>`<option value="${u.n}">${u.pw.toLocaleString('es')}</option>`).join('');
-const DEF=[];
-let inv; try{inv=JSON.parse(localStorage.getItem('codice_leg')||'null')}catch(e){} if(!Array.isArray(inv))inv=DEF.slice();
-const save=()=>{try{localStorage.setItem('codice_leg',JSON.stringify(inv))}catch(e){}};
-const f=n=>Math.round(n).toLocaleString('es');
-const tier=p=>p<100?0:p<300?1:p<1000?2:p<2000?3:4, comp=(a,b)=>Math.abs(tier(a)-tier(b))<=1;
-function drawInv(){$('inv').innerHTML=inv.map((id,k)=>{const u=U.get(id);return u?`<span class="chip">${u.n}<b>${f(u.pw)}</b><button data-k="${k}" title="Quitar">×</button></span>`:''}).join('')||'<i>Sin Legendarias</i>';
- $('inv').querySelectorAll('button').forEach(b=>b.onclick=()=>{inv.splice(+b.dataset.k,1);save();drawInv();route()})}
-$('addb').onclick=()=>{const u=byName.get($('addu').value.trim().toLowerCase());if(u){inv.push(u.id);save();$('addu').value='';drawInv();route()}};
-function pairs(list,lo,hi){const r=[];for(let i=0;i<list.length;i++)for(let j=i+1;j<list.length;j++){const a=list[i],b=list[j],s=a.pw+b.pw;if(comp(a.pw,b.pw)&&s>=lo&&s<=hi&&!r.some(q=>q[0].n===a.n&&q[1].n===b.n))r.push([a,b,s])}return r}
-function route(){
- const t=byName.get($('tg').value.trim().toLowerCase()); if(!t){$('res').textContent='Elige un dragón para ver la ruta.';return}
- const P=t.pw, lo=P/0.9, hi=P/0.55;
- let h=`<div class="big">${t.n} · poder ${f(P)}</div><div>Necesitas dos Legendarias compatibles que sumen entre <b>${f(lo)}</b> y <b>${f(hi)}</b> (lo ideal, cerca de <b>${f(P/0.72)}</b>).</div>`;
- let list=inv.map(id=>U.get(id)).filter(u=>u&&u.g!=='DragonRider').map(u=>({n:u.n,pw:u.pw}));
- const best=ps=>ps.sort((x,y)=>Math.abs(x[2]*0.72-P)-Math.abs(y[2]*0.72-P));
- let d=best(pairs(list,lo,hi));
- if(d.length){h+=`<p class="ok">Ya puedes intentarlo:</p><ol>`+d.slice(0,5).map(p=>`<li>${p[0].n} + ${p[1].n} (suma ${f(p[2])})</li>`).join('')+'</ol>';}
- else{
-  const steps=[]; let k=0;
-  while(!d.length&&k<80){
-   let c=[];for(let i=0;i<list.length;i++)for(let j=i+1;j<list.length;j++){const a=list[i],b=list[j],s=a.pw+b.pw;if(comp(a.pw,b.pw)&&s<=hi)c.push([a,b,s])}
-   if(!c.length)break; c.sort((x,y)=>y[2]-x[2]); const [a,b,s]=c[0], nw={n:'Resultado '+(k+1),pw:Math.round(s*0.72)};
-   if(list.some(u=>u.pw>=nw.pw)&&steps.length&&nw.pw<=steps[steps.length-1].pw)break;
-   list.push(nw); steps.push({a:a.n,b:b.n,s,pw:nw.pw}); k++; d=best(pairs(list,lo,hi));
-  }
-  if(d.length){
-   h+=`<p class="ok">Te falta${steps.length>1?"n":""} ${steps.length} mezcla${steps.length>1?"s":""} antes de poder intentarlo (siempre Legendaria + Legendaria, con piedras):</p><ol>`+steps.map((x,i)=>(steps.length>10&&i>=5&&i<steps.length-3)?(i===5?`<li style="list-style:none">… ${steps.length-8} mezclas más, siempre con tus dos Legendarias más fuertes …</li>`:''):`<li value="${i+1}"><b>${x.a} + ${x.b}</b> (suma ${f(x.s)}) → Legendaria de ~${f(x.s*0.55)}–${f(x.s*0.9)}, esperado ~${f(x.pw)} = <i>Resultado ${i+1}</i></li>`).join('')+`<li value="${steps.length+1}"><b>${d[0][0].n} + ${d[0][1].n}</b> (suma ${f(d[0][2])}) → aquí ya puede salir <b>${t.n}</b></li></ol>`;
-   const m=steps.length+1; h+=`<div>Total: ${m} mezclas · ${2*m}–${3*m} piedras del alma · ${8*m}–${16*m} horas de mezclador.</div>`;
-  } else h+=`<p class="warn">Con tus Legendarias actuales no se llega a una pareja compatible para este dragón. Agrega Legendarias más fuertes o elige un dragón menor.</p>`;
- }
- h+=`<div class="warn">Es una estimación. Cada pareja tiene una lista fija que no incluye todas las unidades de su franja: antes de confirmar, mira «Posibles resultados» y comprueba que ${t.n} aparezca. Si aparece, el primer cash puede subir bastante su probabilidad. Los escalones por encima de 2000 aún no están confirmados.</div>`;
- $('res').innerHTML=h;
-}
-$('tg').addEventListener('input',route);
-document.addEventListener('click',e=>{const b=e.target.closest('.route');if(b){$('tg').value=U.get(b.dataset.id).n;route();$('mix').scrollIntoView({behavior:'smooth'})}});
-drawInv(); route();
 
-// ---- Simulador del Soul Mixer ----
-const KR={"606": "S", "607": "S", "550": "S", "603": "E", "578": "E", "577": "E", "613": "E", "809": "E", "629": "E", "646": "E", "614": "E", "752": "E", "2021": "E", "2030": "E", "612": "E", "619": "E", "632": "E", "621": "E", "645": "E", "701": "E", "750": "E", "687": "E", "760": "E", "705": "E", "759": "E", "761": "E", "560": "E", "774": "E", "702": "E", "754": "E", "867": "E", "780": "E", "635": "E", "749": "E", "640": "L", "638": "L", "536": "L", "557": "L", "533": "L", "796": "L", "618": "L", "534": "L", "554": "L", "652": "L", "712": "L", "727": "L", "706": "L", "683": "L", "878": "L", "2006": "L", "641": "L", "556": "L", "555": "L", "850": "L", "868": "L", "854": "L", "876": "L", "890": "L", "715": "L", "694": "L", "2128": "L", "643": "L", "661": "L"}, TESTS=[[["606", "606"], "12 Épicas (97 %) + 4 Legendarias (0,75 % c/u)", "Camello 10,76 %, Tigre élfico 8,82 %. Legendarias: Valquiria, Rey Arturo, Príncipe Arturo y Trol amable"], [["606", "607"], "5 Épicas + 1 Especial (Mago, 6,31 %) + 9 Legendarias (0,33 % c/u)", "Elfo real 23,28 %, Anubis 22,17 %, Valquiria 16,76 %, Caballero maestro 13,08 %"], [["640", "606"], "14 Épicas (97 %) + 3 Legendarias (1 % c/u)", "Camello 9,23 %, Elfo real 8,36 %, Anubis 7,96 %. Legendarias: Rey Arturo, Trol amable y Príncipe Arturo"], [["550", "606"], "18 Épicas (97 %) + 11 Legendarias (0,27 % c/u)", "Magos legendarios Rojo, Negro, Blanco y de Agua, entre otros"], [["578", "613"], "8 Épicas (97 %) + 4 Legendarias (0,75 % c/u)", "Vikingo 15,41 %, Camello 15,26 %"], [["577", "646"], "2 Épicas (100 %)", "56,25 % y 43,75 %, sin Legendarias"], [["638", "640"], "6 Legendarias (100 %)", "Rey Arturo, Trol amable, Príncipe Arturo y Mini Anubis 17,86 % c/u; 2 draggies 14,29 % c/u"], [["536", "533"], "2 Legendarias (100 %)", "Valquiria o Rey Arturo, 50 % c/u"], [["557", "557"], "6 Legendarias (100 %)", "6 magos, 16,67 % c/u, entre ellos el Mago solar"], [["557", "536"], "10 Legendarias (100 %)", "10 % c/u: Valquiria y magos"], [["606", "603"], "2 Épicas (100 %)", "Aquiles 52,87 %, Mecha celestial 47,13 %"], [["603", "640"], "2 Épicas (97 %) + 6 Legendarias (0,46–0,58 %)", "Aquiles 51,28 %, Mecha celestial 45,72 %; dragones legendarios"], [["603", "603"], "4 Épicas (97 %) + 4 Legendarias (0,75 % c/u)", "Ent 27,66 %, Medusa 24,18 %. Legendarias: Parca y Samurái rojo, entre otras"], [["603", "752"], "3 Épicas (97 %) + 4 Legendarias (0,75 % c/u)", "Cerbero 34,28 %, Ballestero élfico 31,96 %. Legendaria: Gólem dorado"], [["867", "780"], "2 Épicas (97 %) + 2 Legendarias (1,5 % c/u)", "49,46 % y 47,54 %"], [["2030", "867"], "5 Épicas (97 %) + 4 Legendarias (0,75 % c/u)", "Épicas de ~18–21 %. Legendaria: Cría de la reina bestia (6000)"], [["796", "557"], "8 Legendarias (100 %)", "Thor y otras dos 14,29 % c/u; Draggy faraón y 4 draggies Bahamut 11,43 % c/u"]], RN={S:'Especial',E:'Épica',L:'Legendaria'};
-const TN=['A (<100)','B (100–300)','C (300–1000)','D (1000–2000)','E (2000+)'];
-function sim(){
- const a=byName.get($('s1').value.trim().toLowerCase()), b=byName.get($('s2').value.trim().toLowerCase());
- if(!a||!b){$('sres').textContent='Elige dos unidades.';return}
- const jin=[a,b].filter(u=>u.g==='DragonRider'); if(jin.length){$('sres').innerHTML=`<div class="big">${a.n} + ${b.n}</div><p class="warn">Los jinetes de dragón no entran al Soul Mixer: ${jin.map(u=>u.n).join(' y ')} no se puede${jin.length>1?'n':''} mezclar.</p>`;return}
- const ra=KR[a.id], rb=KR[b.id], S=a.pw+b.pw, lo=S*0.55, hi=S*0.9, c=S*0.72;
- let h=`<div class="big">${a.n} + ${b.n}</div>`;
- if(!comp(a.pw,b.pw)){h+=`<p class="warn">No se pueden mezclar: ${a.n} está en el escalón ${TN[tier(a.pw)]} y ${b.n} en el ${TN[tier(b.pw)]}. Solo se mezclan escalones vecinos.</p>`;$('sres').innerHTML=h;return}
- h+=`<div>Suma <b>${f(S)}</b> → pueden salir unidades de <b>${f(lo)}</b> a <b>${f(hi)}</b> de poder (centro ~${f(c)}).</div>`;
- const mode=$('sr').value, LL= mode==='LL' || (mode==='auto' && ra==='L' && rb==='L');
- const known = ra&&rb;
- h+= LL ? `<div class="ok">Dos Legendarias → 100 % Legendaria.</div>` : (mode==='auto'&&!known ? `<div>Rareza de alguna tropa sin confirmar. Si las dos son Legendarias: 100 % Legendaria. Si no: 97 % Épica y 3 % Legendaria.</div>` : `<div class="ok">97 % Épica · 3 % Legendaria.</div>`);
- const t=TESTS.find(x=>(x[0][0]==a.id&&x[0][1]==b.id)||(x[0][0]==b.id&&x[0][1]==a.id));
- if(t) h+=`<p class="ok">Ya probada en el juego: ${t[1]}.</p><div>${t[2]}</div>`;
- const key=[a.id,b.id].sort().join('+'), gm=GUILD.filter(m=>m.pareja===key);
- if(gm.length){const m=gm[gm.length-1];
-  h+=`<p class="ok">Registrada por el gremio (${gm.length} reporte${gm.length>1?'s':''}; el último, de ${esc(m.jugador)} el ${esc(m.fecha)}):</p><div class="cand">`+m.resultados.slice().sort((x,y)=>y.pct-x.pct).map(r=>`<span class="${r.r||''}" title="${r.r?RN[r.r]:'Rareza sin indicar'}">${esc(r.n)} <b>${Number(r.pct).toLocaleString('es')} %</b></span>`).join('')+'</div>'+(m.notas?`<div class="leg">Nota: ${esc(m.notas)}</div>`:'');}
- let cand=[...U.values()].filter(u=>u.pw>=lo&&u.pw<=hi&&u.id!==a.id&&u.id!==b.id&&u.g!=='DragonRider');
- if(LL) cand=cand.filter(u=>KR[u.id]!=='E'&&KR[u.id]!=='S');
- cand.sort((x,y)=>Math.abs(x.pw-c)-Math.abs(y.pw-c));
- const drg=cand.filter(u=>['Dragon','Draggy'].includes(u.g)).length;
- h+=`<p style="margin:10px 0 2px"><b>${cand.length}</b> unidades del Códice caben en esa franja${drg?` (${drg} ${drg>1?'son dragones o draggies':'es dragón o draggy'})`:''}. Las más cercanas al centro:</p>`;
- h+='<div class="cand">'+cand.slice(0,60).map(u=>`<span class="${KR[u.id]||''}" title="${KR[u.id]?RN[KR[u.id]]:'Rareza sin confirmar'}">${['Dragon','Draggy'].includes(u.g)?'🐉 ':''}${u.n} <b>${f(u.pw)}</b></span>`).join('')+(cand.length>60?`<span>… y ${cand.length-60} más</span>`:'')+'</div>';
- h+=`<div class="leg">Color: <span style="color:#b63e52">■</span> Legendaria · <span style="color:#b46d30">■</span> Épica · <span style="color:#398dbe">■</span> Especial · sin color = rareza sin confirmar${LL?' (con dos Legendarias se ocultan las Épicas y Especiales conocidas)':''}.</div>`;
- h+=`<div class="warn">La lista real del juego es un subconjunto fijo de esta franja: confírmala en «Posibles resultados» antes de mezclar.</div>`;
- $('sres').innerHTML=h;
-}
-['s1','s2','sr'].forEach(i=>$(i).addEventListener('input',sim));
-
-// ---- Base del gremio (Google Sheets + Apps Script) ----
-const API=(window.API_URL||'').trim(); let GUILD=[];
-const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-async function loadGuild(){
- if(!API){$('gst').textContent='Sin conexión a la base del gremio: este archivo es la versión local.';return}
- $('gst').textContent='Cargando la base del gremio…';
- try{const r=await fetch(API); const d=await r.json(); GUILD=d.mezclas||[];
-  GUILD.forEach(m=>m.resultados.forEach(x=>{const u=x.id?U.get(String(x.id)):byName.get(String(x.n).toLowerCase()); if(u&&x.r&&!KR[u.id])KR[u.id]=x.r}));
-  const pj=new Set(GUILD.map(m=>m.pareja)).size, js=new Set(GUILD.map(m=>m.jugador)).size;
-  $('gst').textContent=`Base del gremio: ${GUILD.length} mezcla${GUILD.length!==1?'s':''} registrada${GUILD.length!==1?'s':''} (${pj} pareja${pj!==1?'s distintas':''}, ${js} jugador${js!==1?'es':''}).`;
-  sim();
- }catch(e){$('gst').textContent='No se pudo leer la base del gremio. Revisa la conexión o la URL de config.js.'}
-}
-function rsum(){const t=[...document.querySelectorAll('#rt .rp')].reduce((s,i)=>s+(parseFloat(i.value.replace(',','.'))||0),0);$('rsum').textContent=`Suma: ${t.toLocaleString('es',{maximumFractionDigits:2})} %`;$('rsum').style.color=Math.abs(t-100)<=5?'#174a3c':'#a33';return t}
-function addRow(n='',p='',r=''){const tr=document.createElement('tr');
- tr.innerHTML=`<td><input class="rnm" list="dla" placeholder="Nombre de la unidad" value="${esc(n)}"></td><td><input class="rp" type="number" step="0.01" min="0" max="100" placeholder="%" value="${p}"></td><td><select class="rr"><option value="">?</option><option value="L">Legendaria</option><option value="E">Épica</option><option value="S">Especial</option></select></td><td><button class="x" title="Quitar">×</button></td>`;
- tr.querySelector('.rr').value=r; tr.querySelector('.x').onclick=()=>{tr.remove();rsum()};
- tr.querySelector('.rp').addEventListener('input',rsum);
- tr.querySelector('.rnm').addEventListener('change',e=>{const u=byName.get(e.target.value.trim().toLowerCase()); if(u&&KR[u.id]&&!tr.querySelector('.rr').value)tr.querySelector('.rr').value=KR[u.id]});
- $('rt').querySelector('tbody').appendChild(tr); rsum()}
-$('radd').onclick=()=>addRow(); for(let i=0;i<3;i++)addRow();
-try{$('rj').value=localStorage.getItem('gremio_jugador')||'';$('rc').value=localStorage.getItem('gremio_codigo')||''}catch(e){}
-function msg(t,ok){$('rmsg').textContent=t;$('rmsg').style.color=ok?'#174a3c':'#a33'}
-$('rsend').onclick=async()=>{
- if(!API)return msg('Esta versión no está conectada a la base del gremio.');
- const a=byName.get($('s1').value.trim().toLowerCase()), b=byName.get($('s2').value.trim().toLowerCase());
- if(!a||!b)return msg('Elige arriba las dos tropas de la mezcla.');
- if(a.g==='DragonRider'||b.g==='DragonRider')return msg('Los jinetes de dragón no entran al Soul Mixer.');
- if(!comp(a.pw,b.pw))return msg('Esas dos tropas no se pueden mezclar.');
- const jug=$('rj').value.trim(), cod=$('rc').value.trim();
- if(!jug)return msg('Escribe tu nombre en el juego.'); if(!cod)return msg('Escribe el código del gremio.');
- const res=[...document.querySelectorAll('#rt tbody tr')].map(tr=>{const n=tr.querySelector('.rnm').value.trim(), u=byName.get(n.toLowerCase());
-  return {n:u?u.n:n,id:u?u.id:'',pct:parseFloat(tr.querySelector('.rp').value.replace(',','.'))||0,r:tr.querySelector('.rr').value}}).filter(x=>x.n);
- if(!res.length)return msg('Agrega al menos un resultado.');
- const t=rsum(); if(Math.abs(t-100)>5)return msg(`Los porcentajes suman ${t.toLocaleString('es')} %; deben sumar ~100 %.`);
- try{localStorage.setItem('gremio_jugador',jug);localStorage.setItem('gremio_codigo',cod)}catch(e){}
- $('rsend').disabled=true; msg('Enviando…',true);
- try{const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({codigo:cod,jugador:jug,u1:a.n,u1_id:a.id,u2:b.n,u2_id:b.id,resultados:res,notas:$('rn').value.trim()})});
-  const d=await r.json();
-  if(d.ok){msg('¡Mezcla registrada! Gracias por aportar.',true);$('rt').querySelector('tbody').innerHTML='';for(let i=0;i<3;i++)addRow();$('rn').value='';await loadGuild()}
-  else msg(d.error||'No se pudo registrar.');
- }catch(e){msg('Error de conexión. Inténtalo de nuevo.')}
- $('rsend').disabled=false;
-};
-loadGuild();
-sim();
+document.addEventListener('click',e=>{const b=e.target.closest('.route');if(b)location.href='mezclador.html#ruta='+b.dataset.id});
 </script>
 <footer>Poder = ataque × vida ÷ 10 · Estadísticas de la Bóveda (juego original) · ⚡ habilidad activa (botón en combate) · ◆ habilidad pasiva · Habilidades sacadas del código del juego original</footer>
 </body></html>
