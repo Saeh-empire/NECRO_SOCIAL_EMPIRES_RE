@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Soul Mixer del gremio · Empires Reborn</title><meta name="robots" content="noindex,nofollow"><script src="config.js"></script><style>*{box-sizing:border-box}
+<title>Soul Mixer Necros · Empires Reborn</title><meta name="robots" content="noindex,nofollow"><script src="config.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"><link rel="icon" href="emblema.png"><style>*{box-sizing:border-box}
 body{margin:0;font:15px/1.35 'Trebuchet MS',system-ui,sans-serif;color:#2a1a0c;
  background:repeating-linear-gradient(90deg,rgba(0,0,0,.14) 0 2px,transparent 2px 46px),#5a3417}
 header{text-align:center;padding:28px 16px 6px}
@@ -71,8 +71,51 @@ footer{color:#f3e5b4;text-align:center;font-size:12px;padding:6px 0 26px}
 #rt .x{background:none;border:0;color:#a33;font-weight:900;font-size:18px;cursor:pointer}
 #rsum{font-weight:800;color:#5c3613}#rmsg{font-weight:800}
 .rules{font-size:13px;color:#5c3613;margin-top:10px}
-@media(max-width:700px){#sim .cols{grid-template-columns:1fr}#mix .cols{grid-template-columns:1fr}.row{grid-template-columns:1fr}.lab{text-align:left}.title h1{font-size:28px}section{border-width:8px;padding:12px}}.nav{display:inline-block;margin-top:10px;font:800 15px 'Trebuchet MS',sans-serif;color:#fff3cf;background:linear-gradient(#2c6b58,#174a3c);border:2px solid #e5b445;border-radius:10px;padding:8px 16px;text-decoration:none}.nav:hover{filter:brightness(1.15)}#mix,#sim{margin-bottom:22px}</style></head><body>
-<header><div class="title"><h1>Soul Mixer del gremio</h1><p>Simulador, registro de mezclas y ruta a los dragones</p><a class="nav" href="./">📖 Ir al Códice</a></div></header>
+@media(max-width:700px){#sim .cols{grid-template-columns:1fr}#mix .cols{grid-template-columns:1fr}.row{grid-template-columns:1fr}.lab{text-align:left}.title h1{font-size:28px}section{border-width:8px;padding:12px}}.nav{display:inline-block;margin-top:10px;font:800 15px 'Trebuchet MS',sans-serif;color:#fff3cf;background:linear-gradient(#2c6b58,#174a3c);border:2px solid #e5b445;border-radius:10px;padding:8px 16px;text-decoration:none}.nav:hover{filter:brightness(1.15)}#mix,#sim{margin-bottom:22px}
+body{font:15px/1.4 Inter,system-ui,sans-serif;color:#e6dfcf;background:#0d0d0e radial-gradient(ellipse at top,#1c1c1f 0,#0d0d0e 65%) no-repeat}
+a{color:#e0b43a}a:hover{color:#f6d77a}
+.hd{background:#151517;border-bottom:3px double #6b5318;text-align:left;padding:0}
+.hdin{max-width:1280px;margin:0 auto;padding:14px 20px 18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.hdl{display:flex;align-items:center;gap:14px}.emb{width:88px;height:auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.6))}
+.hd h1{margin:0;font:900 32px/1.05 'Cinzel Decorative',serif;color:#e0b43a;letter-spacing:2px;text-shadow:0 2px 0 #3d2c06}
+.hd p{margin:4px 0 0;font:600 13px Cinzel,serif;letter-spacing:3px;color:#c9bfa8;text-transform:uppercase}
+.navw{display:flex;align-items:flex-start;gap:12px}.hd nav{display:flex;gap:8px;flex-wrap:wrap;padding-top:18px}
+.hd nav a{font:700 15px Cinzel,serif;letter-spacing:1px;padding:10px 16px;text-decoration:none;border:1px solid #4bd57f;color:#4bd57f}
+.hd nav a.on{background:#6e1016;border-color:#e0b43a;color:#ece4d0}.hd nav a:hover{filter:brightness(1.2)}
+section{background:linear-gradient(#1a1a1c,#141416);border:2px solid #4a3c1a;border-radius:4px;box-shadow:inset 0 0 50px rgba(0,0,0,.6);position:relative}
+section::before,section::after{content:"";position:absolute;top:8px;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f6d77a,#8a6514 70%)}
+section::before{left:8px}section::after{right:8px}
+.ban{background:none;border:0;border-bottom:1px dashed #6b5318;border-radius:0;box-shadow:none;font:900 26px 'Cinzel Decorative',serif;color:#e0b43a;padding:4px 24px}
+.note{color:#b3a890}.grp{font:700 20px Cinzel,serif;color:#e0b43a;border-bottom:1px solid #4a3c1a}
+.row{border-bottom:1px dashed #3a3322}.lab{font:700 16px/1.15 Cinzel,serif;color:#ece4d0}.lab small{color:#b3a890;font-family:Inter,sans-serif}
+.card{background:linear-gradient(#1d1d20,#121214);border:2px solid #4a3c1a;border-top:3px solid #e0b43a;border-radius:4px;box-shadow:0 4px 10px rgba(0,0,0,.5)}
+.card:hover{border-color:#8a6514;border-top-color:#f6d77a}
+.img{background:#ece4d0;border:2px solid #8a6514}
+.card h4{font:700 14px/1.15 Cinzel,serif;color:#ece4d0}
+.tag{background:#26262a;color:#c9bfa8;border:1px solid #3a3322}
+.ab .act{background:#0f2a1c;color:#bff2d2;border:1px solid #4bd57f}.ab .pas{background:#2a2216;color:#e0b43a;border:1px solid #6b5318}
+.ab .hero{color:#4bd57f}.ab.none{color:#8a8172}
+.pw{background:linear-gradient(#2a2216,#1a1610);border:1px solid #6b5318;color:#e0b43a}.pw b{text-shadow:none}
+.st div{background:#121214;border:1px solid #3a3322}.st span{color:#9a917e}.st b{color:#ece4d0}
+.bar{background:#151517;border:2px solid #6b5318;border-radius:4px;box-shadow:0 6px 16px rgba(0,0,0,.6)}
+.bar input[type=search],.bar select,.rng input,#mix input,#mix select,#sim input,#sim select,#reg input,#reg select,#reg textarea,#nm textarea,#nm input{background:#0d0d0e;color:#ece4d0;border:1px solid #6b5318;border-radius:4px;font-family:Inter,sans-serif}
+.rng,.chk{color:#c9bfa8}#cnt{color:#e0b43a;font-family:Cinzel,serif}
+.bar button,#mix button.b,#reg button.b,#nm .send{background:#6e1016;color:#ece4d0;border:1px solid #e0b43a;border-radius:4px;font-family:Cinzel,serif}
+.none{color:#b3a890;font-family:Cinzel,serif}
+.route{background:#0f2a1c;color:#4bd57f;border:1px solid #4bd57f;border-radius:4px;font-family:Cinzel,serif}
+.nb{background:#121214;color:#c9bfa8;border:1px dashed #6b5318;border-radius:4px}.nb.has{background:#2a2216;color:#e0b43a;border:1px solid #e0b43a}
+#mix h5,#sim h5,#reg h5{font:700 16px Cinzel,serif;color:#e0b43a}
+.chip{background:#121214;border:1px solid #6b5318;color:#ece4d0}.chip b{color:#e0b43a}.chip button{color:#f08a7a}
+.out{background:#121214;border:1px solid #6b5318;border-radius:4px;color:#e6dfcf}.out .big{font:700 18px Cinzel,serif;color:#e0b43a}.out .ok{color:#4bd57f}.out .warn{color:#f08a7a}
+.cand span{background:#1d1d20;border:1px solid #3a3322;color:#e6dfcf}.cand .L{background:#3a1216;border-color:#d8323c}.cand .E{background:#33240f;border-color:#e08a3c}.cand .S{background:#132a3a;border-color:#6fb2e0}.cand b{color:#e0b43a}
+.leg,.rules,#rt th,#rsum{color:#b3a890}#reg{border-top:1px dashed #6b5318}#rt .x{color:#f08a7a}
+#nm{background:rgba(0,0,0,.75)}#nm .box{background:#1a1a1c;border:2px solid #e0b43a;border-radius:4px;color:#e6dfcf}#nm h3{font:700 20px Cinzel,serif;color:#e0b43a}#nm .sub{color:#b3a890}#nm .nt{background:#121214;border:1px solid #3a3322}#nm .nt small{color:#e0b43a}#nm .close{background:#26262a;color:#ece4d0}
+.ft{max-width:760px;margin:30px auto 0;padding:0 16px 30px;text-align:center;color:#9a917e;font-size:12px}
+.cloth{background:#6e1016;border-top:2px solid #8a6514;padding:14px 18px 24px;font:600 15px Cinzel,serif;letter-spacing:1px;color:#e6dfcf;clip-path:polygon(0 0,100% 0,100% 88%,93% 95%,86% 87%,78% 97%,70% 88%,61% 98%,52% 88%,44% 96%,35% 87%,27% 95%,18% 88%,9% 96%,0 88%)}
+.cloth b{color:#e0b43a}.ft p{margin:10px 0 0}
+@media(max-width:700px){.hd h1{font-size:23px}.emb{width:62px}.navw .pen{display:none}.hd nav{padding-top:0}}
+</style></head><body>
+<header class="hd"><div class="hdin"><div class="hdl"><img class="emb" src="emblema.png" alt="Emblema del gremio Necros"><div><h1>Soul Mixer Necros</h1><p>Simulador · mezclas del gremio · ruta a los dragones</p></div></div><div class="navw"><svg class="pen" width="46" height="96" viewBox="0 0 46 96" aria-hidden="true"><rect x="0" y="2" width="46" height="5" rx="2" fill="#8a6514"/><path d="M5 7h36v66l-5 5-4-7-5 9-4-6-5 10-4-8-4 7-5-6z" fill="#6e1016" stroke="#3d080c" stroke-width="1.5"/><circle cx="16" cy="40" r="3" fill="#151517"/><path d="M28 55l4 6" stroke="#151517" stroke-width="3"/><path d="M14 22h18M23 16v20" stroke="#4bd57f" stroke-width="2" opacity=".85"/></svg><nav><a href="./">Códice</a><a class="on" href="mezclador.html">Soul Mixer</a></nav><svg class="pen" width="46" height="96" viewBox="0 0 46 96" aria-hidden="true"><rect x="0" y="2" width="46" height="5" rx="2" fill="#8a6514"/><path d="M5 7h36v66l-5 5-4-7-5 9-4-6-5 10-4-8-4 7-5-6z" fill="#6e1016" stroke="#3d080c" stroke-width="1.5"/><circle cx="16" cy="40" r="3" fill="#151517"/><path d="M28 55l4 6" stroke="#151517" stroke-width="3"/><path d="M14 22h18M23 16v20" stroke="#4bd57f" stroke-width="2" opacity=".85"/></svg></div></div></header>
 <main><section id="mix"><div class="ban">Ruta a un dragón</div>
 <p class="note">Elige el dragón que quieres y anota tus Legendarias: el Códice calcula qué pareja lo puede dar y, si aún no llegas, la escalera de mezclas para alcanzarlo.</p>
 <div class="cols">
@@ -195,7 +238,7 @@ async function loadGuild(){
   sim();
  }catch(e){$('gst').textContent='No se pudo leer la base del gremio. Revisa la conexión o la URL de config.js.'}
 }
-function rsum(){const t=[...document.querySelectorAll('#rt .rp')].reduce((s,i)=>s+(parseFloat(i.value.replace(',','.'))||0),0);$('rsum').textContent=`Suma: ${t.toLocaleString('es',{maximumFractionDigits:2})} %`;$('rsum').style.color=Math.abs(t-100)<=5?'#174a3c':'#a33';return t}
+function rsum(){const t=[...document.querySelectorAll('#rt .rp')].reduce((s,i)=>s+(parseFloat(i.value.replace(',','.'))||0),0);$('rsum').textContent=`Suma: ${t.toLocaleString('es',{maximumFractionDigits:2})} %`;$('rsum').style.color=Math.abs(t-100)<=5?'#4bd57f':'#f08a7a';return t}
 function addRow(n='',p='',r=''){const tr=document.createElement('tr');
  tr.innerHTML=`<td><input class="rnm" list="dla" placeholder="Nombre de la unidad" value="${esc(n)}"></td><td><input class="rp" type="number" step="0.01" min="0" max="100" placeholder="%" value="${p}"></td><td><select class="rr"><option value="">?</option><option value="L">Legendaria</option><option value="E">Épica</option><option value="S">Especial</option></select></td><td><button class="x" title="Quitar">×</button></td>`;
  tr.querySelector('.rr').value=r; tr.querySelector('.x').onclick=()=>{tr.remove();rsum()};
@@ -204,7 +247,7 @@ function addRow(n='',p='',r=''){const tr=document.createElement('tr');
  $('rt').querySelector('tbody').appendChild(tr); rsum()}
 $('radd').onclick=()=>addRow(); for(let i=0;i<3;i++)addRow();
 try{$('rj').value=localStorage.getItem('gremio_jugador')||'';$('rc').value=localStorage.getItem('gremio_codigo')||''}catch(e){}
-function msg(t,ok){$('rmsg').textContent=t;$('rmsg').style.color=ok?'#174a3c':'#a33'}
+function msg(t,ok){$('rmsg').textContent=t;$('rmsg').style.color=ok?'#4bd57f':'#f08a7a'}
 $('rsend').onclick=async()=>{
  if(!API)return msg('Esta versión no está conectada a la base del gremio.');
  const a=byName.get($('s1').value.trim().toLowerCase()), b=byName.get($('s2').value.trim().toLowerCase());
@@ -229,5 +272,5 @@ $('rsend').onclick=async()=>{
 loadGuild();
 sim();
 </script>
-<footer>Datos de unidades del Códice · Las mezclas registradas se guardan en la base del gremio</footer>
+<footer class="ft"><div class="cloth">Forjado por <b>Saeh</b> para el gremio Necros</div><p>Datos de unidades del Códice · Las mezclas registradas se guardan en la base del gremio</p></footer>
 </body></html>
