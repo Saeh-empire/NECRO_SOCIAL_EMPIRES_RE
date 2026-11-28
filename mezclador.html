@@ -314,7 +314,7 @@ function enter(){var g=document.getElementById('sesg').value.trim(),u=document.g
  set({gremio:'NECROS',usuario:u.slice(0,40)});close()}
 document.getElementById('seso').onclick=enter;m.addEventListener('keydown',function(e){if(e.key==='Enter')enter();if(e.key==='Escape')close()});
 if(btn)btn.addEventListener('click',function(){var s=get();if(s){if(confirm('¿Abandonar la cripta, '+s.usuario+'? (cerrar sesión)'))set(null)}else open()});
-window.necrosSesion=get;window.necrosLogin=open;paint();
+window.necrosSesion=get;window.necrosLogin=open;paint();document.dispatchEvent(new CustomEvent('necros-sesion',{detail:get()}));
 var visto=false;try{visto=sessionStorage.getItem('necros_popup')==='1';sessionStorage.setItem('necros_popup','1')}catch(e){}
 if(!get()&&!visto)setTimeout(open,400);
 })();
