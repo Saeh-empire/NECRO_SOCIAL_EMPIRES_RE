@@ -8089,7 +8089,7 @@ const RN2={N:'Normal',S:'Especial',R:'Rara',E:'Épica',L:'Legendaria'};
 function rarTop(id){const v=RAR[id]; if(!v)return null; let best=null,n=0,tot=0; for(const k of ['L','E','R','S','N']){tot+=v[k]||0; if((v[k]||0)>n){n=v[k];best=k}} return best?{r:best,n:n,tot:tot}:null}
 function paintRar(){cards.forEach(c=>{const id=c.dataset.id, conf=c.dataset.k, tg=c.querySelector('.tags'); if(!tg)return; let s=tg.querySelector('.rg');
  const t=conf?null:rarTop(id); if(!t){if(s)s.remove(); if(!conf)c.dataset.kv=''; return}
- if(!s){s=document.createElement('span');s.className='tag rg';tg.appendChild(s)} s.className='tag rg '+t.r; s.textContent=RN2[t.r]+' · gremio ('+t.n+')'; s.title='Rareza votada por el gremio: '+t.n+' de '+t.tot+' votos (sin confirmar)'; c.dataset.kv=t.r})}
+ if(!s){s=document.createElement('span');s.className='tag rg';tg.appendChild(s)} s.className='tag rg '+t.r; s.textContent=RN2[t.r]+' ('+t.n+')'; s.title='Rareza votada por el gremio: '+t.n+' de '+t.tot+' votos (sin confirmar)'; c.dataset.kv=t.r})}
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 cards.forEach(c=>{const b=document.createElement('button');b.className='nb';b.dataset.id=c.dataset.id;b.textContent='📝 Notas';c.appendChild(b)});
 function paint(){document.querySelectorAll('.nb').forEach(b=>{const n=(NOTAS[b.dataset.id]||[]).length;b.textContent=n?`📝 Notas (${n}) · ★ Rareza`:'📝 Nota · ★ Rareza';b.classList.toggle('has',!!n)})}
