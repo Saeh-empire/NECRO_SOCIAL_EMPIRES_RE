@@ -8095,11 +8095,11 @@ cards.forEach(c=>{const b=document.createElement('button');b.className='nb';b.da
 function paint(){document.querySelectorAll('.nb').forEach(b=>{const n=(NOTAS[b.dataset.id]||[]).length;b.textContent=n?`📝 Notas (${n}) · ★ Rareza`:'📝 Nota · ★ Rareza';b.classList.toggle('has',!!n)})}
 async function loadNotas(){if(!API){paint();return}
  try{const d=await (await fetch(API)).json(); NOTAS={}; (d.notas||[]).forEach(n=>(NOTAS[n.unidad_id]=NOTAS[n.unidad_id]||[]).push(n));
-  RAR={}; (d.rarezas||[]).forEach(v=>{const o=RAR[v.unidad_id]=RAR[v.unidad_id]||{S:0,E:0,L:0,by:{}}; if(o[v.rareza]!==undefined){o[v.rareza]++; o.by[String(v.jugador).toLowerCase()]=v.rareza}});}catch(e){} paint(); paintRar(); if(cur)openNotes(cur)}
+  RAR={}; (d.rarezas||[]).forEach(v=>{const o=RAR[v.unidad_id]=RAR[v.unidad_id]||{N:0,S:0,R:0,E:0,L:0,by:{}}; if(o[v.rareza]!==undefined){o[v.rareza]++; o.by[String(v.jugador).toLowerCase()]=v.rareza}});}catch(e){} paint(); paintRar(); if(cur)openNotes(cur)}
 let cur=null;
 const nm=document.createElement('div'); nm.id='nm'; nm.hidden=true; document.body.appendChild(nm);
 function openNotes(id){cur=id; const c=document.querySelector(`.card[data-id="${id}"]`), n=c.querySelector('h4').textContent, L=(NOTAS[id]||[]).slice().reverse();
- const ses=window.necrosSesion&&necrosSesion(), conf=c.dataset.k, v=RAR[id]||{S:0,E:0,L:0,by:{}}, mine=ses?v.by[ses.usuario.toLowerCase()]:null;
+ const ses=window.necrosSesion&&necrosSesion(), conf=c.dataset.k, v=RAR[id]||{N:0,S:0,R:0,E:0,L:0,by:{}}, mine=ses?v.by[ses.usuario.toLowerCase()]:null;
  const rarHtml=conf?`<div class="rarb"><b>Rareza:</b> ${RN2[conf]} <span class="sub">(confirmada)</span></div>`
   :`<div class="rarb"><b>Rareza:</b> ${['N','S','R','E','L'].map(k=>`<button class="rv ${k}${mine===k?' me':''}" data-r="${k}" ${API?'':'disabled'}>${RN2[k]} <small>${v[k]||0}</small></button>`).join('')}<div class="sub">¿La tienes en el juego? Vota sus estrellas: ★ Normal · ★★ Especial · ★★★ Rara · ★★★★ Épica · ★★★★★ Legendaria.${mine?' Tu voto: '+RN2[mine]+'. Toca otra para cambiarlo o la misma para quitarlo.':''}</div><span id="rmsg2"></span></div>`;
  nm.innerHTML=`<div class="box"><h3>📝 ${esc(n)}</h3>${rarHtml}<div class="sub">Notas del gremio: cambios del Reborn, consejos, lo que hayan visto.</div>
@@ -8109,18 +8109,28 @@ function openNotes(id){cur=id; const c=document.querySelector(`.card[data-id="${
  <div class="btns"><button class="send" id="nsend">Guardar nota</button><button class="close" id="ncl">Cerrar</button><span id="nmsg"></span></div>`
  :`<div class="sub">Esta versión no está conectada a la base del gremio.</div><div class="btns"><button class="close" id="ncl">Cerrar</button></div>`}</div>`;
  nm.hidden=false; $('ncl').onclick=()=>{nm.hidden=true;cur=null};
- nm.querySelectorAll('.rv').forEach(b=>b.onclick=async()=>{const s=window.necrosSesion&&necrosSesion(), m=$('rmsg2'); if(!s){nm.hidden=true;necrosLogin();return}
-  nm.querySelectorAll('.rv').forEach(x=>x.disabled=true); m.textContent=b.classList.contains('me')?'Quitando voto…':'Guardando voto…'; m.style.color='#4bd57f';
-  try{const d=await (await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tipo:'rareza',gremio:s.gremio,jugador:s.usuario,unidad_id:id,unidad:n,rareza:b.dataset.r,quitar:b.classList.contains('me')})})).json();
-   if(d.ok){await loadNotas(); const mm=$('rmsg2'); if(mm){mm.textContent=b.classList.contains('me')?'Voto retirado.':'Voto registrado. La cripta lo recordará.';mm.style.color='#4bd57f'}} else {m.textContent=d.error||'No se pudo guardar.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}
-  }catch(e){m.textContent='Error de conexión.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}});
+ nm.querySelectorAll('.rv').forEach(b=>b.onclick=async()=>{const s=window.necrosSesion&&necrosSesion(); if(!s){nm.hidden=true;necrosLogin();return}
+  // Respuesta inmediata: se actualiza en pantalla y se guarda en segundo plano
+  const quitar=b.classList.contains('me'), r=b.dataset.r, me=s.usuario.toLowerCase();
+  const prev=JSON.stringify(RAR[id]||null), o=RAR[id]=RAR[id]||{N:0,S:0,R:0,E:0,L:0,by:{}};
+  const old=o.by[me]; if(old){o[old]=Math.max(0,(o[old]||0)-1); delete o.by[me]}
+  if(!quitar){o[r]=(o[r]||0)+1; o.by[me]=r}
+  paintRar(); openNotes(id);
+  const fin=(t,ok)=>{const mm=$('rmsg2'); if(mm&&cur===id){mm.textContent=t;mm.style.color=ok?'#4bd57f':'#f08a7a'}};
+  fin(quitar?'Voto retirado.':'Voto registrado. La cripta lo recordará.',true);
+  try{const d=await (await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tipo:'rareza',gremio:s.gremio,jugador:s.usuario,unidad_id:id,unidad:n,rareza:r,quitar:quitar})})).json();
+   if(!d.ok)throw new Error(d.error||'No se pudo guardar.');
+  }catch(err){RAR[id]=JSON.parse(prev)||undefined; if(!RAR[id])delete RAR[id]; paintRar(); if(cur===id)openNotes(id); fin('No se guardó: '+(err.message||'error de conexión')+'.',false)}});
  if(API) $('nsend').onclick=async()=>{const t=$('ntx').value.trim(), s=window.necrosSesion&&necrosSesion(), m=$('nmsg');
   const say=(x,ok)=>{m.textContent=x;m.style.color=ok?'#4bd57f':'#f08a7a'};
   if(!t)return say('Escribe la nota.'); if(!s){nm.hidden=true;necrosLogin();return}
-  $('nsend').disabled=true; say('Guardando…',true);
+  const hoy=new Date().toISOString().slice(0,10), nota={fecha:hoy,jugador:s.usuario,unidad_id:id,unidad:n,nota:t};
+  (NOTAS[id]=NOTAS[id]||[]).push(nota); paint(); openNotes(id);
+  const fin=(x,ok)=>{const mm=$('nmsg'); if(mm&&cur===id){mm.textContent=x;mm.style.color=ok?'#4bd57f':'#f08a7a'}};
+  fin('Nota guardada. La cripta lo recordará.',true);
   try{const d=await (await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tipo:'nota',gremio:s.gremio,jugador:s.usuario,unidad_id:id,unidad:n,nota:t})})).json();
-   if(d.ok){await loadNotas(); const mm=$('nmsg'); if(mm){mm.textContent='Nota guardada. La cripta lo recordará.';mm.style.color='#4bd57f'}} else {say(d.error||'No se pudo guardar.');$('nsend').disabled=false}
-  }catch(e){say('Error de conexión.');$('nsend').disabled=false}};
+   if(!d.ok)throw new Error(d.error||'No se pudo guardar.');
+  }catch(err){NOTAS[id]=(NOTAS[id]||[]).filter(x=>x!==nota); paint(); if(cur===id){openNotes(id); const tx=$('ntx'); if(tx)tx.value=t} fin('No se guardó: '+(err.message||'error de conexión')+'.',false)}};
 }
 nm.addEventListener('click',e=>{if(e.target===nm){nm.hidden=true;cur=null}});
 document.addEventListener('click',e=>{const b=e.target.closest('.nb');if(b)openNotes(b.dataset.id)});
