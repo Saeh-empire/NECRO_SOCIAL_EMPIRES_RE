@@ -86,6 +86,14 @@ main .card{background:linear-gradient(rgba(29,29,32,.9),rgba(18,18,20,.93))!impo
 @media (max-width:1500px){.guard{opacity:.6;width:36vw}}
 @media (max-width:900px){.guard{display:none}}
 
+#sesm{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:60;display:flex;align-items:center;justify-content:center}
+#sesm[hidden]{display:none}#sesm .box{background:#151517;border:1px solid #e0b43a;padding:22px 24px;width:min(92vw,360px);color:#e6dfcf;font-family:Inter,sans-serif}
+#sesm h3{font:700 18px Cinzel,serif;color:#e0b43a;margin:0 0 6px}#sesm p{font-size:13px;color:#b3a890;margin:0 0 14px}
+#sesm label{display:block;font-size:12px;letter-spacing:1px;color:#b3a890;margin:10px 0 4px;text-transform:uppercase}
+#sesm input{width:100%;box-sizing:border-box;padding:9px 10px;background:#0d0d0e;border:1px solid #6b5318;color:#ece4d0;font-size:15px}
+#sesm .b{display:flex;gap:8px;margin-top:16px;align-items:center}#sesm button{font:700 13px Cinzel,serif;padding:9px 14px;cursor:pointer;border:1px solid #e0b43a}
+#sesm .ok{background:#6e1016;color:#ece4d0}#sesm .no{background:#1a1a1c;color:#b3a890;border-color:#6b5318}#sesm .er{color:#f08a7a;font-size:13px;min-height:18px;margin-top:8px}
+
 body{font:15px/1.4 Inter,system-ui,sans-serif;color:#e6dfcf;background:#0d0d0e radial-gradient(ellipse at top,#1c1c1f 0,#0d0d0e 65%) no-repeat}
 a{color:#e0b43a}a:hover{color:#f6d77a}
 .hd{background:#151517;border-bottom:3px double #6b5318;text-align:left;padding:0}
@@ -129,7 +137,7 @@ section::before{left:8px}section::after{right:8px}
 .cloth b{color:#e0b43a}.ft p{margin:10px 0 0}
 @media(max-width:700px){.hd h1{font-size:23px}.emb{width:62px}.navw .pen{display:none}.hd nav{padding-top:0}}
 </style></head><body>
-<div class="guard l" aria-hidden="true"><img alt=""></div><div class="guard r" aria-hidden="true"><img alt=""></div><script>(function(){var G=[["guardian_izq.webp",0,0],["guardian_der.webp",1,0],["guardian_guadana.webp",0,1],["guardian_cruzado.webp",0,1],["guardian_carnicero.webp",0,1]];var L=document.querySelector(".guard.l img"),R=document.querySelector(".guard.r img");if(!L||!R)return;function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x;}return a;}var cur=sh(G).slice(0,2);function put(p){L.src=p[0][0];L.style.transform=p[0][1]?"scaleX(-1)":"";R.src=p[1][0];R.style.transform=p[1][2]?"scaleX(-1)":"";}put(cur);var gs=document.querySelectorAll(".guard");function next(){var n;do{n=sh(G).slice(0,2);}while(n[0][0]===cur[0][0]&&n[1][0]===cur[1][0]);var c=0;n.forEach(function(g){var im=new Image();im.onload=im.onerror=function(){if(++c===2)swap(n);};im.src=g[0];});}function swap(n){gs.forEach(function(g){g.style.opacity="0";});setTimeout(function(){put(n);cur=n;gs.forEach(function(g){g.style.opacity="";});},1300);}if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))setInterval(function(){if(!document.hidden)next();},25000);})();</script><header class="hd"><div class="hdin"><div class="hdl"><img class="emb" src="emblema.png" alt="Emblema del gremio Necros"><div><h1>Soul Mixer Necros</h1><p>Simulador · mezclas del gremio · ruta a los dragones</p></div></div><div class="navw" style="gap:0"><div class="navw"><svg class="pen" width="46" height="96" viewBox="0 0 46 96" aria-hidden="true"><rect x="0" y="2" width="46" height="5" rx="2" fill="#8a6514"/><path d="M5 7h36v66l-5 5-4-7-5 9-4-6-5 10-4-8-4 7-5-6z" fill="#6e1016" stroke="#3d080c" stroke-width="1.5"/><circle cx="16" cy="40" r="3" fill="#151517"/><path d="M28 55l4 6" stroke="#151517" stroke-width="3"/><path d="M14 22h18M23 16v20" stroke="#4bd57f" stroke-width="2" opacity=".85"/></svg><nav><a href="./">Códice</a><a class="on" href="mezclador.html">Soul Mixer</a></nav><svg class="pen" width="46" height="96" viewBox="0 0 46 96" aria-hidden="true"><rect x="0" y="2" width="46" height="5" rx="2" fill="#8a6514"/><path d="M5 7h36v66l-5 5-4-7-5 9-4-6-5 10-4-8-4 7-5-6z" fill="#6e1016" stroke="#3d080c" stroke-width="1.5"/><circle cx="16" cy="40" r="3" fill="#151517"/><path d="M28 55l4 6" stroke="#151517" stroke-width="3"/><path d="M14 22h18M23 16v20" stroke="#4bd57f" stroke-width="2" opacity=".85"/></svg></div><button id="musica" class="mus" type="button" title="Música de fondo" aria-pressed="false">🔇 Música</button></div></div></header>
+<div class="guard l" aria-hidden="true"><img alt=""></div><div class="guard r" aria-hidden="true"><img alt=""></div><script>(function(){var G=[["guardian_izq.webp",0,0],["guardian_der.webp",1,0],["guardian_guadana.webp",0,1],["guardian_cruzado.webp",0,1],["guardian_carnicero.webp",0,1]];var L=document.querySelector(".guard.l img"),R=document.querySelector(".guard.r img");if(!L||!R)return;function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x;}return a;}var cur=sh(G).slice(0,2);function put(p){L.src=p[0][0];L.style.transform=p[0][1]?"scaleX(-1)":"";R.src=p[1][0];R.style.transform=p[1][2]?"scaleX(-1)":"";}put(cur);var gs=document.querySelectorAll(".guard");function next(){var n;do{n=sh(G).slice(0,2);}while(n[0][0]===cur[0][0]&&n[1][0]===cur[1][0]);var c=0;n.forEach(function(g){var im=new Image();im.onload=im.onerror=function(){if(++c===2)swap(n);};im.src=g[0];});}function swap(n){gs.forEach(function(g){g.style.opacity="0";});setTimeout(function(){put(n);cur=n;gs.forEach(function(g){g.style.opacity="";});},1300);}if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))setInterval(function(){if(!document.hidden)next();},25000);})();</script><header class="hd"><div class="hdin"><div class="hdl"><img class="emb" src="emblema.png" alt="Emblema del gremio Necros"><div><h1>Soul Mixer Necros</h1><p>Simulador · mezclas del gremio · ruta a los dragones</p></div></div><div class="navw" style="gap:0"><div class="navw"><svg class="pen" width="46" height="96" viewBox="0 0 46 96" aria-hidden="true"><rect x="0" y="2" width="46" height="5" rx="2" fill="#8a6514"/><path d="M5 7h36v66l-5 5-4-7-5 9-4-6-5 10-4-8-4 7-5-6z" fill="#6e1016" stroke="#3d080c" stroke-width="1.5"/><circle cx="16" cy="40" r="3" fill="#151517"/><path d="M28 55l4 6" stroke="#151517" stroke-width="3"/><path d="M14 22h18M23 16v20" stroke="#4bd57f" stroke-width="2" opacity=".85"/></svg><nav><a href="./">Códice</a><a class="on" href="mezclador.html">Soul Mixer</a></nav><svg class="pen" width="46" height="96" viewBox="0 0 46 96" aria-hidden="true"><rect x="0" y="2" width="46" height="5" rx="2" fill="#8a6514"/><path d="M5 7h36v66l-5 5-4-7-5 9-4-6-5 10-4-8-4 7-5-6z" fill="#6e1016" stroke="#3d080c" stroke-width="1.5"/><circle cx="16" cy="40" r="3" fill="#151517"/><path d="M28 55l4 6" stroke="#151517" stroke-width="3"/><path d="M14 22h18M23 16v20" stroke="#4bd57f" stroke-width="2" opacity=".85"/></svg></div><button id="ses" class="mus" type="button">👤 Iniciar sesión</button><button id="musica" class="mus" type="button" title="Música de fondo" aria-pressed="false">🔇 Música</button></div></div></header>
 <main><section id="mix"><div class="ban">Ruta a un dragón</div>
 <p class="note">Elige el dragón que quieres y anota tus Legendarias: el Códice calcula qué pareja lo puede dar y, si aún no llegas, la escalera de mezclas para alcanzarlo.</p>
 <div class="cols">
@@ -158,7 +166,7 @@ section::before{left:8px}section::after{right:8px}
 <div id="reg"><h5>Registrar esta mezcla en la base del gremio</h5>
  <p class="note" id="gst" style="text-align:left;margin:0 0 8px"></p>
  <p class="note" style="text-align:left;margin:0 0 8px">Elige arriba las dos tropas, abre «Posibles resultados» en el juego y copia cada resultado con su porcentaje.</p>
- <div class="regf"><input id="rj" placeholder="Tu nombre en el juego"><input id="rc" type="password" placeholder="Código del gremio"></div>
+ <div class="regf" id="rses"></div>
  <table id="rt"><thead><tr><th>Resultado</th><th>%</th><th>Rareza</th><th></th></tr></thead><tbody></tbody></table>
  <div class="regf"><button class="b" id="radd">+ Resultado</button><span id="rsum"></span></div>
  <textarea id="rn" rows="2" placeholder="Notas (opcional): piedras que pidió, horas, qué salió…"></textarea>
@@ -260,7 +268,8 @@ function addRow(n='',p='',r=''){const tr=document.createElement('tr');
  tr.querySelector('.rnm').addEventListener('change',e=>{const u=byName.get(e.target.value.trim().toLowerCase()); if(u&&KR[u.id]&&!tr.querySelector('.rr').value)tr.querySelector('.rr').value=KR[u.id]});
  $('rt').querySelector('tbody').appendChild(tr); rsum()}
 $('radd').onclick=()=>addRow(); for(let i=0;i<3;i++)addRow();
-try{$('rj').value=localStorage.getItem('gremio_jugador')||'';$('rc').value=localStorage.getItem('gremio_codigo')||''}catch(e){}
+function rses(){const s=window.necrosSesion&&necrosSesion(); $('rses').innerHTML=s?`Registrando como <b>${esc(s.usuario)}</b> · Necros`:`<button type="button" class="mus" onclick="necrosLogin()">👤 Inicia sesión para registrar</button>`}
+rses(); document.addEventListener('necros-sesion',rses);
 function msg(t,ok){$('rmsg').textContent=t;$('rmsg').style.color=ok?'#4bd57f':'#f08a7a'}
 $('rsend').onclick=async()=>{
  if(!API)return msg('Esta versión no está conectada a la base del gremio.');
@@ -268,15 +277,13 @@ $('rsend').onclick=async()=>{
  if(!a||!b)return msg('Elige arriba las dos tropas de la mezcla.');
  if(a.g==='DragonRider'||b.g==='DragonRider')return msg('Los jinetes de dragón no entran al Soul Mixer.');
  if(!comp(a.pw,b.pw))return msg('Esas dos tropas no se pueden mezclar.');
- const jug=$('rj').value.trim(), cod=$('rc').value.trim();
- if(!jug)return msg('Escribe tu nombre en el juego.'); if(!cod)return msg('Escribe el código del gremio.');
+ const ses=window.necrosSesion&&necrosSesion(); if(!ses){necrosLogin();return msg('Primero inicia sesión (gremio NECROS y tu nombre).')}
  const res=[...document.querySelectorAll('#rt tbody tr')].map(tr=>{const n=tr.querySelector('.rnm').value.trim(), u=byName.get(n.toLowerCase());
   return {n:u?u.n:n,id:u?u.id:'',pct:parseFloat(tr.querySelector('.rp').value.replace(',','.'))||0,r:tr.querySelector('.rr').value}}).filter(x=>x.n);
  if(!res.length)return msg('Agrega al menos un resultado.');
  const t=rsum(); if(Math.abs(t-100)>5)return msg(`Los porcentajes suman ${t.toLocaleString('es')} %; deben sumar ~100 %.`);
- try{localStorage.setItem('gremio_jugador',jug);localStorage.setItem('gremio_codigo',cod)}catch(e){}
  $('rsend').disabled=true; msg('Enviando…',true);
- try{const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({codigo:cod,jugador:jug,u1:a.n,u1_id:a.id,u2:b.n,u2_id:b.id,resultados:res,notas:$('rn').value.trim()})});
+ try{const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({gremio:ses.gremio,jugador:ses.usuario,u1:a.n,u1_id:a.id,u2:b.n,u2_id:b.id,resultados:res,notas:$('rn').value.trim()})});
   const d=await r.json();
   if(d.ok){msg('¡Mezcla registrada! Gracias por aportar.',true);$('rt').querySelector('tbody').innerHTML='';for(let i=0;i<3;i++)addRow();$('rn').value='';await loadGuild()}
   else msg(d.error||'No se pudo registrar.');
@@ -287,6 +294,27 @@ loadGuild();
 sim();
 </script>
 <footer class="ft"><div class="cloth">Forjado por <b>Saeh</b> para el gremio Necros</div><p>Datos de unidades del Códice · Las mezclas registradas se guardan en la base del gremio</p><p class="mcred">Música: «Cripta de Necros», remix hecho con Suno</p></footer><script>
+(function(){
+var K='necros_sesion';
+function get(){try{var s=JSON.parse(localStorage.getItem(K)||'null');return s&&s.usuario&&String(s.gremio).toUpperCase()==='NECROS'?s:null}catch(e){return null}}
+function set(s){try{if(s)localStorage.setItem(K,JSON.stringify(s));else localStorage.removeItem(K)}catch(e){};paint();document.dispatchEvent(new CustomEvent('necros-sesion',{detail:s}))}
+var btn=document.getElementById('ses');
+function paint(){if(!btn)return;var s=get();btn.textContent=s?('👤 '+s.usuario):'👤 Iniciar sesión';btn.classList.toggle('on',!!s);btn.title=s?('Sesión: '+s.usuario+' · Necros (toca para salir)'):'Inicia sesión para registrar mezclas y notas'}
+var m=document.createElement('div');m.id='sesm';m.hidden=true;
+m.innerHTML='<div class="box"><h3>Iniciar sesión</h3><p>Así tus mezclas y notas quedan registradas con tu nombre.</p><label>Gremio</label><input id="sesg" placeholder="NECROS" autocomplete="off"><label>Tu nombre en el juego</label><input id="sesu" maxlength="40" autocomplete="nickname"><div class="er" id="sese"></div><div class="b"><button class="ok" id="seso">Entrar</button><button class="no" id="sesc">Cancelar</button></div></div>';
+document.body.appendChild(m);
+function open(){m.hidden=false;document.getElementById('sese').textContent='';document.getElementById('sesg').value='';document.getElementById('sesu').value='';setTimeout(function(){document.getElementById('sesg').focus()},30)}
+function close(){m.hidden=true}
+document.getElementById('sesc').onclick=close;m.addEventListener('click',function(e){if(e.target===m)close()});
+function enter(){var g=document.getElementById('sesg').value.trim(),u=document.getElementById('sesu').value.trim(),er=document.getElementById('sese');
+ if(g.toUpperCase()!=='NECROS'){er.textContent='Ese no es el gremio. Escribe NECROS.';return}
+ if(!u){er.textContent='Escribe tu nombre en el juego.';return}
+ set({gremio:'NECROS',usuario:u.slice(0,40)});close()}
+document.getElementById('seso').onclick=enter;m.addEventListener('keydown',function(e){if(e.key==='Enter')enter();if(e.key==='Escape')close()});
+if(btn)btn.addEventListener('click',function(){var s=get();if(s){if(confirm('¿Cerrar la sesión de '+s.usuario+'?'))set(null)}else open()});
+window.necrosSesion=get;window.necrosLogin=open;paint();
+})();
+</script><script>
 (function(){
 var btn=document.getElementById('musica');if(!btn)return;
 var AC=window.AudioContext||window.webkitAudioContext;if(!AC){btn.style.display='none';return;}
