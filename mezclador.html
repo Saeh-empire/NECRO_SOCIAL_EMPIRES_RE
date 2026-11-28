@@ -255,6 +255,8 @@ async function loadGuild(){
  $('gst').textContent='Cargando la base del gremio…';
  try{const r=await fetch(API); const d=await r.json(); GUILD=d.mezclas||[];
   GUILD.forEach(m=>m.resultados.forEach(x=>{const u=x.id?U.get(String(x.id)):byName.get(String(x.n).toLowerCase()); if(u&&x.r&&!KR[u.id])KR[u.id]=x.r}));
+  {const V={}; (d.rarezas||[]).forEach(v=>{const o=V[v.unidad_id]=V[v.unidad_id]||{}; o[v.rareza]=(o[v.rareza]||0)+1});
+   Object.keys(V).forEach(id=>{if(KR[id])return; let b=null,n=0; ['L','E','S'].forEach(k=>{if((V[id][k]||0)>n){n=V[id][k];b=k}}); if(b)KR[id]=b});}
   const pj=new Set(GUILD.map(m=>m.pareja)).size, js=new Set(GUILD.map(m=>m.jugador)).size;
   $('gst').textContent=`Base del gremio: ${GUILD.length} mezcla${GUILD.length!==1?'s':''} registrada${GUILD.length!==1?'s':''} (${pj} pareja${pj!==1?'s distintas':''}, ${js} jugador${js!==1?'es':''}).`;
   sim();

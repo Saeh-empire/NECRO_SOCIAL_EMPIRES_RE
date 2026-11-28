@@ -140,7 +140,11 @@ section::before{left:8px}section::after{right:8px}
 .img{position:relative}.img .anim{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:2px;background:radial-gradient(circle at 50% 62%,#2d4034 0,#161a18 58%,#0f1011 100%);opacity:0;transition:opacity .15s}
 .img .anim.v{opacity:1}.img .alab{position:absolute;left:4px;bottom:3px;font:700 11px Cinzel,serif;letter-spacing:.5px;color:#ece4d0;background:rgba(110,16,22,.88);border:1px solid #e0b43a;padding:1px 6px;opacity:0;transition:opacity .15s;pointer-events:none}
 .img .alab.v{opacity:1}.card[data-an] .img{cursor:help}
-.nav{display:inline-block;margin-top:10px;font:800 15px 'Trebuchet MS',sans-serif;color:#fff3cf;background:linear-gradient(#2c6b58,#174a3c);border:2px solid #e5b445;border-radius:10px;padding:8px 16px;text-decoration:none}.nav:hover{filter:brightness(1.15)}.nb{display:block;width:100%;margin-top:6px;font:800 12px 'Trebuchet MS',sans-serif;color:#5c3613;background:#f3e5b4;border:2px dashed #c9a35a;border-radius:8px;padding:5px;cursor:pointer}.nb.has{background:#fde7a6;border-style:solid;border-color:#a8692f;color:#3a210c}
+.nav{display:inline-block;margin-top:10px;font:800 15px 'Trebuchet MS',sans-serif;color:#fff3cf;background:linear-gradient(#2c6b58,#174a3c);border:2px solid #e5b445;border-radius:10px;padding:8px 16px;text-decoration:none}.nav:hover{filter:brightness(1.15)}.rarb{margin:6px 0 10px;padding:8px 10px;border:1px solid #6b5318;background:rgba(0,0,0,.25)}.rarb b{color:#e0b43a;margin-right:6px}
+.rv{font:700 12px Cinzel,serif;padding:5px 9px;margin:3px 4px 3px 0;cursor:pointer;background:#1a1a1c;color:#ece4d0;border:1px solid #6b5318}.rv small{opacity:.75;margin-left:3px}
+.rv.S{border-color:#6fb2e0}.rv.E{border-color:#e08a3c}.rv.L{border-color:#d8323c}.rv.me{background:#2a0b0e;outline:2px solid #e0b43a}.rv:disabled{opacity:.6;cursor:default}
+.tag.rg{border:1px dashed currentColor}.tag.rg.S{color:#6fb2e0}.tag.rg.E{color:#e08a3c}.tag.rg.L{color:#d8323c}
+.nb{display:block;width:100%;margin-top:6px;font:800 12px 'Trebuchet MS',sans-serif;color:#5c3613;background:#f3e5b4;border:2px dashed #c9a35a;border-radius:8px;padding:5px;cursor:pointer}.nb.has{background:#fde7a6;border-style:solid;border-color:#a8692f;color:#3a210c}
 #nm{position:fixed;inset:0;background:rgba(20,12,4,.65);display:flex;align-items:center;justify-content:center;z-index:50;padding:12px}
 #nm .box{background:#fbf1d3;border:6px solid #8a5426;border-radius:16px;max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:16px 18px}
 #nm h3{margin:0 0 4px;font:800 20px Georgia,serif;color:#174a3c}#nm .sub{font-size:13px;color:#5c3613;margin-bottom:10px}
@@ -8080,23 +8084,36 @@ run();
 
 
 // ---- Notas del gremio por unidad ----
-const API=(window.API_URL||'').trim(); let NOTAS={};
+const API=(window.API_URL||'').trim(); let NOTAS={}, RAR={};
+const RN2={S:'Especial',E:'Épica',L:'Legendaria'};
+function rarTop(id){const v=RAR[id]; if(!v)return null; let best=null,n=0,tot=0; for(const k of ['L','E','S']){tot+=v[k]||0; if((v[k]||0)>n){n=v[k];best=k}} return best?{r:best,n:n,tot:tot}:null}
+function paintRar(){cards.forEach(c=>{const id=c.dataset.id, conf=c.dataset.k, tg=c.querySelector('.tags'); if(!tg)return; let s=tg.querySelector('.rg');
+ const t=conf?null:rarTop(id); if(!t){if(s)s.remove(); if(!conf)c.dataset.kv=''; return}
+ if(!s){s=document.createElement('span');s.className='tag rg';tg.appendChild(s)} s.className='tag rg '+t.r; s.textContent=RN2[t.r]+' · gremio ('+t.n+')'; s.title='Rareza votada por el gremio: '+t.n+' de '+t.tot+' votos (sin confirmar)'; c.dataset.kv=t.r})}
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 cards.forEach(c=>{const b=document.createElement('button');b.className='nb';b.dataset.id=c.dataset.id;b.textContent='📝 Notas';c.appendChild(b)});
-function paint(){document.querySelectorAll('.nb').forEach(b=>{const n=(NOTAS[b.dataset.id]||[]).length;b.textContent=n?`📝 Notas del gremio (${n})`:'📝 Agregar nota';b.classList.toggle('has',!!n)})}
+function paint(){document.querySelectorAll('.nb').forEach(b=>{const n=(NOTAS[b.dataset.id]||[]).length;b.textContent=n?`📝 Notas (${n}) · ★ Rareza`:'📝 Nota · ★ Rareza';b.classList.toggle('has',!!n)})}
 async function loadNotas(){if(!API){paint();return}
- try{const d=await (await fetch(API)).json(); NOTAS={}; (d.notas||[]).forEach(n=>(NOTAS[n.unidad_id]=NOTAS[n.unidad_id]||[]).push(n));}catch(e){} paint(); if(cur)openNotes(cur)}
+ try{const d=await (await fetch(API)).json(); NOTAS={}; (d.notas||[]).forEach(n=>(NOTAS[n.unidad_id]=NOTAS[n.unidad_id]||[]).push(n));
+  RAR={}; (d.rarezas||[]).forEach(v=>{const o=RAR[v.unidad_id]=RAR[v.unidad_id]||{S:0,E:0,L:0,by:{}}; if(o[v.rareza]!==undefined){o[v.rareza]++; o.by[String(v.jugador).toLowerCase()]=v.rareza}});}catch(e){} paint(); paintRar(); if(cur)openNotes(cur)}
 let cur=null;
 const nm=document.createElement('div'); nm.id='nm'; nm.hidden=true; document.body.appendChild(nm);
 function openNotes(id){cur=id; const c=document.querySelector(`.card[data-id="${id}"]`), n=c.querySelector('h4').textContent, L=(NOTAS[id]||[]).slice().reverse();
- const ses=window.necrosSesion&&necrosSesion();
- nm.innerHTML=`<div class="box"><h3>📝 ${esc(n)}</h3><div class="sub">Notas del gremio: cambios del Reborn, consejos, lo que hayan visto.</div>
+ const ses=window.necrosSesion&&necrosSesion(), conf=c.dataset.k, v=RAR[id]||{S:0,E:0,L:0,by:{}}, mine=ses?v.by[ses.usuario.toLowerCase()]:null;
+ const rarHtml=conf?`<div class="rarb"><b>Rareza:</b> ${RN2[conf]} <span class="sub">(confirmada)</span></div>`
+  :`<div class="rarb"><b>Rareza:</b> ${['S','E','L'].map(k=>`<button class="rv ${k}${mine===k?' me':''}" data-r="${k}" ${API?'':'disabled'}>${RN2[k]} <small>${v[k]||0}</small></button>`).join('')}<div class="sub">¿La tienes en el juego? Vota sus estrellas: ★★ Especial · ★★★★ Épica · ★★★★★ Legendaria.${mine?' Tu voto: '+RN2[mine]+' (puedes cambiarlo).':''}</div><span id="rmsg2"></span></div>`;
+ nm.innerHTML=`<div class="box"><h3>📝 ${esc(n)}</h3>${rarHtml}<div class="sub">Notas del gremio: cambios del Reborn, consejos, lo que hayan visto.</div>
  ${L.length?L.map(x=>`<div class="nt">${esc(x.nota)}<small>${esc(x.jugador)} · ${esc(x.fecha)}</small></div>`).join(''):'<div class="sub"><i>Todavía no hay notas para esta unidad.</i></div>'}
  ${API?`<textarea id="ntx" rows="3" maxlength="500" placeholder="Ej.: En el Reborn tiene 27 de ataque (antes 26)."></textarea>
  <div class="sub">${ses?`Se guardará como <b>${esc(ses.usuario)}</b> · Necros`:'Necesitas iniciar sesión para guardar notas.'}</div>
  <div class="btns"><button class="send" id="nsend">Guardar nota</button><button class="close" id="ncl">Cerrar</button><span id="nmsg"></span></div>`
  :`<div class="sub">Esta versión no está conectada a la base del gremio.</div><div class="btns"><button class="close" id="ncl">Cerrar</button></div>`}</div>`;
  nm.hidden=false; $('ncl').onclick=()=>{nm.hidden=true;cur=null};
+ nm.querySelectorAll('.rv').forEach(b=>b.onclick=async()=>{const s=window.necrosSesion&&necrosSesion(), m=$('rmsg2'); if(!s){nm.hidden=true;necrosLogin();return}
+  nm.querySelectorAll('.rv').forEach(x=>x.disabled=true); m.textContent='Guardando voto…'; m.style.color='#4bd57f';
+  try{const d=await (await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tipo:'rareza',gremio:s.gremio,jugador:s.usuario,unidad_id:id,unidad:n,rareza:b.dataset.r})})).json();
+   if(d.ok){await loadNotas()} else {m.textContent=d.error||'No se pudo guardar.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}
+  }catch(e){m.textContent='Error de conexión.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}});
  if(API) $('nsend').onclick=async()=>{const t=$('ntx').value.trim(), s=window.necrosSesion&&necrosSesion(), m=$('nmsg');
   const say=(x,ok)=>{m.textContent=x;m.style.color=ok?'#4bd57f':'#f08a7a'};
   if(!t)return say('Escribe la nota.'); if(!s){nm.hidden=true;necrosLogin();return}
