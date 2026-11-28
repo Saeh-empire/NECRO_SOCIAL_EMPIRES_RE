@@ -8105,21 +8105,21 @@ function openNotes(id){cur=id; const c=document.querySelector(`.card[data-id="${
  nm.innerHTML=`<div class="box"><h3>📝 ${esc(n)}</h3>${rarHtml}<div class="sub">Notas del gremio: cambios del Reborn, consejos, lo que hayan visto.</div>
  ${L.length?L.map(x=>`<div class="nt">${esc(x.nota)}<small>${esc(x.jugador)} · ${esc(x.fecha)}</small></div>`).join(''):'<div class="sub"><i>Todavía no hay notas para esta unidad.</i></div>'}
  ${API?`<textarea id="ntx" rows="3" maxlength="500" placeholder="Ej.: En el Reborn tiene 27 de ataque (antes 26)."></textarea>
- <div class="sub">${ses?`Se guardará como <b>${esc(ses.usuario)}</b> · Necros`:'Necesitas iniciar sesión para guardar notas.'}</div>
+ <div class="sub">${ses?`Se guardará como <b>${esc(ses.usuario)}</b> · Necros`:'Identifícate, nigromante, para dejar tu nota en la cripta.'}</div>
  <div class="btns"><button class="send" id="nsend">Guardar nota</button><button class="close" id="ncl">Cerrar</button><span id="nmsg"></span></div>`
  :`<div class="sub">Esta versión no está conectada a la base del gremio.</div><div class="btns"><button class="close" id="ncl">Cerrar</button></div>`}</div>`;
  nm.hidden=false; $('ncl').onclick=()=>{nm.hidden=true;cur=null};
  nm.querySelectorAll('.rv').forEach(b=>b.onclick=async()=>{const s=window.necrosSesion&&necrosSesion(), m=$('rmsg2'); if(!s){nm.hidden=true;necrosLogin();return}
   nm.querySelectorAll('.rv').forEach(x=>x.disabled=true); m.textContent=b.classList.contains('me')?'Quitando voto…':'Guardando voto…'; m.style.color='#4bd57f';
   try{const d=await (await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tipo:'rareza',gremio:s.gremio,jugador:s.usuario,unidad_id:id,unidad:n,rareza:b.dataset.r,quitar:b.classList.contains('me')})})).json();
-   if(d.ok){await loadNotas()} else {m.textContent=d.error||'No se pudo guardar.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}
+   if(d.ok){await loadNotas(); const mm=$('rmsg2'); if(mm){mm.textContent=b.classList.contains('me')?'Voto retirado.':'Voto registrado. La cripta lo recordará.';mm.style.color='#4bd57f'}} else {m.textContent=d.error||'No se pudo guardar.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}
   }catch(e){m.textContent='Error de conexión.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}});
  if(API) $('nsend').onclick=async()=>{const t=$('ntx').value.trim(), s=window.necrosSesion&&necrosSesion(), m=$('nmsg');
   const say=(x,ok)=>{m.textContent=x;m.style.color=ok?'#4bd57f':'#f08a7a'};
   if(!t)return say('Escribe la nota.'); if(!s){nm.hidden=true;necrosLogin();return}
   $('nsend').disabled=true; say('Guardando…',true);
   try{const d=await (await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tipo:'nota',gremio:s.gremio,jugador:s.usuario,unidad_id:id,unidad:n,nota:t})})).json();
-   if(d.ok){await loadNotas()} else {say(d.error||'No se pudo guardar.');$('nsend').disabled=false}
+   if(d.ok){await loadNotas(); const mm=$('nmsg'); if(mm){mm.textContent='Nota guardada. La cripta lo recordará.';mm.style.color='#4bd57f'}} else {say(d.error||'No se pudo guardar.');$('nsend').disabled=false}
   }catch(e){say('Error de conexión.');$('nsend').disabled=false}};
 }
 nm.addEventListener('click',e=>{if(e.target===nm){nm.hidden=true;cur=null}});
@@ -8136,17 +8136,17 @@ function set(s){try{if(s)localStorage.setItem(K,JSON.stringify(s));else localSto
 var btn=document.getElementById('ses');
 function paint(){if(!btn)return;var s=get();btn.textContent=s?('👤 '+s.usuario):'👤 Iniciar sesión';btn.classList.toggle('on',!!s);btn.title=s?('Sesión: '+s.usuario+' · Necros (toca para salir)'):'Inicia sesión para registrar mezclas y notas'}
 var m=document.createElement('div');m.id='sesm';m.hidden=true;
-m.innerHTML='<div class="box"><h3>Iniciar sesión</h3><p>Bienvenido al Códice de Necros. Inicia sesión para que tus mezclas y notas queden registradas con tu nombre.</p><label>Gremio</label><input id="sesg" placeholder="Nombre del gremio" autocomplete="off"><label>Tu nombre en el juego</label><input id="sesu" maxlength="40" autocomplete="nickname"><div class="er" id="sese"></div><div class="b"><button class="ok" id="seso">Entrar</button><button class="no" id="sesc">Solo mirar</button></div></div>';
+m.innerHTML='<div class="box"><h3>Identifícate, nigromante</h3><p>Las puertas de la cripta solo se abren a los de Necros. Di tu gremio y tu nombre de batalla, y todo lo que registres quedará firmado por ti.</p><label>Gremio</label><input id="sesg" placeholder="Nombre del gremio" autocomplete="off"><label>Tu nombre en el juego</label><input id="sesu" maxlength="40" autocomplete="nickname"><div class="er" id="sese"></div><div class="b"><button class="ok" id="seso">Entrar a la cripta</button><button class="no" id="sesc">Solo mirar</button></div></div>';
 document.body.appendChild(m);
 function open(){m.hidden=false;document.getElementById('sese').textContent='';document.getElementById('sesg').value='';document.getElementById('sesu').value='';setTimeout(function(){document.getElementById('sesg').focus()},30)}
 function close(){m.hidden=true}
 document.getElementById('sesc').onclick=close;m.addEventListener('click',function(e){if(e.target===m)close()});
 function enter(){var g=document.getElementById('sesg').value.trim(),u=document.getElementById('sesu').value.trim(),er=document.getElementById('sese');
- if(g.toUpperCase()!=='NECROS'){er.textContent='Ese no es el gremio. Escribe NECROS.';return}
- if(!u){er.textContent='Escribe tu nombre en el juego.';return}
+ if(g.toUpperCase()!=='NECROS'){er.textContent='Esa no es nuestra cripta. Escribe NECROS.';return}
+ if(!u){er.textContent='Los guardianes necesitan tu nombre de batalla.';return}
  set({gremio:'NECROS',usuario:u.slice(0,40)});close()}
 document.getElementById('seso').onclick=enter;m.addEventListener('keydown',function(e){if(e.key==='Enter')enter();if(e.key==='Escape')close()});
-if(btn)btn.addEventListener('click',function(){var s=get();if(s){if(confirm('¿Cerrar la sesión de '+s.usuario+'?'))set(null)}else open()});
+if(btn)btn.addEventListener('click',function(){var s=get();if(s){if(confirm('¿Abandonar la cripta, '+s.usuario+'? (cerrar sesión)'))set(null)}else open()});
 window.necrosSesion=get;window.necrosLogin=open;paint();
 var visto=false;try{visto=sessionStorage.getItem('necros_popup')==='1';sessionStorage.setItem('necros_popup','1')}catch(e){}
 if(!get()&&!visto)setTimeout(open,400);

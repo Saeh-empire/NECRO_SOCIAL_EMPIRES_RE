@@ -209,17 +209,17 @@ function set(s){try{if(s)localStorage.setItem(K,JSON.stringify(s));else localSto
 var btn=document.getElementById('ses');
 function paint(){if(!btn)return;var s=get();btn.textContent=s?('👤 '+s.usuario):'👤 Iniciar sesión';btn.classList.toggle('on',!!s);btn.title=s?('Sesión: '+s.usuario+' · Necros (toca para salir)'):'Inicia sesión para registrar mezclas y notas'}
 var m=document.createElement('div');m.id='sesm';m.hidden=true;
-m.innerHTML='<div class="box"><h3>Iniciar sesión</h3><p>Bienvenido al Códice de Necros. Inicia sesión para que tus mezclas y notas queden registradas con tu nombre.</p><label>Gremio</label><input id="sesg" placeholder="Nombre del gremio" autocomplete="off"><label>Tu nombre en el juego</label><input id="sesu" maxlength="40" autocomplete="nickname"><div class="er" id="sese"></div><div class="b"><button class="ok" id="seso">Entrar</button><button class="no" id="sesc">Solo mirar</button></div></div>';
+m.innerHTML='<div class="box"><h3>Identifícate, nigromante</h3><p>Las puertas de la cripta solo se abren a los de Necros. Di tu gremio y tu nombre de batalla, y todo lo que registres quedará firmado por ti.</p><label>Gremio</label><input id="sesg" placeholder="Nombre del gremio" autocomplete="off"><label>Tu nombre en el juego</label><input id="sesu" maxlength="40" autocomplete="nickname"><div class="er" id="sese"></div><div class="b"><button class="ok" id="seso">Entrar a la cripta</button><button class="no" id="sesc">Solo mirar</button></div></div>';
 document.body.appendChild(m);
 function open(){m.hidden=false;document.getElementById('sese').textContent='';document.getElementById('sesg').value='';document.getElementById('sesu').value='';setTimeout(function(){document.getElementById('sesg').focus()},30)}
 function close(){m.hidden=true}
 document.getElementById('sesc').onclick=close;m.addEventListener('click',function(e){if(e.target===m)close()});
 function enter(){var g=document.getElementById('sesg').value.trim(),u=document.getElementById('sesu').value.trim(),er=document.getElementById('sese');
- if(g.toUpperCase()!=='NECROS'){er.textContent='Ese no es el gremio. Escribe NECROS.';return}
- if(!u){er.textContent='Escribe tu nombre en el juego.';return}
+ if(g.toUpperCase()!=='NECROS'){er.textContent='Esa no es nuestra cripta. Escribe NECROS.';return}
+ if(!u){er.textContent='Los guardianes necesitan tu nombre de batalla.';return}
  set({gremio:'NECROS',usuario:u.slice(0,40)});close()}
 document.getElementById('seso').onclick=enter;m.addEventListener('keydown',function(e){if(e.key==='Enter')enter();if(e.key==='Escape')close()});
-if(btn)btn.addEventListener('click',function(){var s=get();if(s){if(confirm('¿Cerrar la sesión de '+s.usuario+'?'))set(null)}else open()});
+if(btn)btn.addEventListener('click',function(){var s=get();if(s){if(confirm('¿Abandonar la cripta, '+s.usuario+'? (cerrar sesión)'))set(null)}else open()});
 window.necrosSesion=get;window.necrosLogin=open;paint();
 var visto=false;try{visto=sessionStorage.getItem('necros_popup')==='1';sessionStorage.setItem('necros_popup','1')}catch(e){}
 if(!get()&&!visto)setTimeout(open,400);
