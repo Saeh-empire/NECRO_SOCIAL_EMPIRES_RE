@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manual del gremio · Necros</title><meta name="robots" content="noindex,nofollow"><script src="config.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"><link rel="icon" href="emblema.png"><style>
+
+.mus{font:700 13px Cinzel,serif;letter-spacing:1px;padding:8px 12px;background:#1a1a1c;color:#b3a890;border:1px solid #6b5318;cursor:pointer;margin-left:6px;align-self:flex-start;margin-top:18px}
+.mcred{font-size:12px;color:#8a7f68}.mus:hover{filter:brightness(1.25)}.mus.on{color:#e0b43a;border-color:#e0b43a;background:#2a0b0e}
+
+.guard{transition:opacity 1.2s ease;position:fixed;bottom:0;height:94vh;width:calc((100vw - 1280px)/2 + 210px);z-index:0;pointer-events:none;opacity:.92;-webkit-mask-image:linear-gradient(to top,transparent 0,#000 14%);mask-image:linear-gradient(to top,transparent 0,#000 14%)}
+.guard img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 18px rgba(75,213,127,.25))}
+.guard.l{left:0}.guard.l img{object-position:right bottom}.guard.r{right:0}.guard.r img{object-position:left bottom}
+.hd,main,footer,.ft{position:relative;z-index:1}
+main section{background:linear-gradient(rgba(26,26,28,.6),rgba(20,20,22,.66))!important;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+main .card{background:linear-gradient(rgba(29,29,32,.9),rgba(18,18,20,.93))!important}
+.bar{background:rgba(21,21,23,.86)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+@media (max-width:1500px){.guard{opacity:.6;width:36vw}}
+@media (max-width:900px){.guard{display:none}}
+
+#sesm{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:60;display:flex;align-items:center;justify-content:center}
+#sesm[hidden]{display:none}#sesm .box{background:#151517;border:1px solid #e0b43a;padding:22px 24px;width:min(92vw,360px);color:#e6dfcf;font-family:Inter,sans-serif}
+#sesm h3{font:700 18px Cinzel,serif;color:#e0b43a;margin:0 0 6px}#sesm p{font-size:13px;color:#b3a890;margin:0 0 14px}
+#sesm label{display:block;font-size:12px;letter-spacing:1px;color:#b3a890;margin:10px 0 4px;text-transform:uppercase}
+#sesm input{width:100%;box-sizing:border-box;padding:9px 10px;background:#0d0d0e;border:1px solid #6b5318;color:#ece4d0;font-size:15px}
+#sesm .b{display:flex;gap:8px;margin-top:16px;align-items:center}#sesm button{font:700 13px Cinzel,serif;padding:9px 14px;cursor:pointer;border:1px solid #e0b43a}
+#sesm .ok{background:#6e1016;color:#ece4d0}#sesm .no{background:#1a1a1c;color:#b3a890;border-color:#6b5318}#sesm .er{color:#f08a7a;font-size:13px;min-height:18px;margin-top:8px}
+
+body{font:15px/1.4 Inter,system-ui,sans-serif;color:#e6dfcf;background:#0d0d0e radial-gradient(ellipse at top,#1c1c1f 0,#0d0d0e 65%) no-repeat}
+a{color:#e0b43a}a:hover{color:#f6d77a}
+.hd{background:#151517;border-bottom:3px double #6b5318;text-align:left;padding:0}
+.hdin{max-width:1280px;margin:0 auto;padding:14px 20px 18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.hdl{display:flex;align-items:center;gap:14px}.emb{width:88px;height:auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.6))}
+.hd h1{margin:0;font:900 32px/1.05 'Cinzel Decorative',serif;color:#e0b43a;letter-spacing:2px;text-shadow:0 2px 0 #3d2c06}
+.hd p{margin:4px 0 0;font:600 13px Cinzel,serif;letter-spacing:3px;color:#c9bfa8;text-transform:uppercase}
+.navw{display:flex;align-items:flex-start;gap:12px}.hd nav{display:flex;gap:8px;flex-wrap:wrap;padding-top:18px}
+.hd nav a{font:700 15px Cinzel,serif;letter-spacing:1px;padding:10px 16px;text-decoration:none;border:1px solid #4bd57f;color:#4bd57f}
+.hd nav a.on{background:#6e1016;border-color:#e0b43a;color:#ece4d0}.hd nav a:hover{filter:brightness(1.2)}
+section{background:linear-gradient(#1a1a1c,#141416);border:2px solid #4a3c1a;border-radius:4px;box-shadow:inset 0 0 50px rgba(0,0,0,.6);position:relative}
+section::before,section::after{content:"";position:absolute;top:8px;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f6d77a,#8a6514 70%)}
+section::before{left:8px}section::after{right:8px}
+.ban{background:none;border:0;border-bottom:1px dashed #6b5318;border-radius:0;box-shadow:none;font:900 26px 'Cinzel Decorative',serif;color:#e0b43a;padding:4px 24px}
+.note{color:#b3a890}.grp{font:700 20px Cinzel,serif;color:#e0b43a;border-bottom:1px solid #4a3c1a}
+.row{border-bottom:1px dashed #3a3322}.lab{font:700 16px/1.15 Cinzel,serif;color:#ece4d0}.lab small{color:#b3a890;font-family:Inter,sans-serif}
+.card{background:linear-gradient(#1d1d20,#121214);border:2px solid #4a3c1a;border-top:3px solid #e0b43a;border-radius:4px;box-shadow:0 4px 10px rgba(0,0,0,.5)}
+.card:hover{border-color:#8a6514;border-top-color:#f6d77a}
+.img{background:radial-gradient(circle at 50% 62%,#2d4034 0,#161a18 58%,#0f1011 100%);border:2px solid #8a6514}
+.card h4{font:700 14px/1.15 Cinzel,serif;color:#ece4d0}
+.tag{background:#26262a;color:#c9bfa8;border:1px solid #3a3322}
+.ab .act{background:#0f2a1c;color:#bff2d2;border:1px solid #4bd57f}.ab .pas{background:#2a2216;color:#e0b43a;border:1px solid #6b5318}
+.ab .hero{color:#4bd57f}.ab.none{color:#8a8172}
+.pw{background:linear-gradient(#2a2216,#1a1610);border:1px solid #6b5318;color:#e0b43a}.pw b{text-shadow:none}
+.st div{background:#121214;border:1px solid #3a3322}.st span{color:#9a917e}.st b{color:#ece4d0}
+.bar{background:#151517;border:2px solid #6b5318;border-radius:4px;box-shadow:0 6px 16px rgba(0,0,0,.6)}
+.bar input[type=search],.bar select,.rng input,#mix input,#mix select,#sim input,#sim select,#reg input,#reg select,#reg textarea,#nm textarea,#nm input{background:#0d0d0e;color:#ece4d0;border:1px solid #6b5318;border-radius:4px;font-family:Inter,sans-serif}
+.rng,.chk{color:#c9bfa8}#cnt{color:#e0b43a;font-family:Cinzel,serif}
+.bar button,#mix button.b,#reg button.b,#nm .send{background:#6e1016;color:#ece4d0;border:1px solid #e0b43a;border-radius:4px;font-family:Cinzel,serif}
+.none{color:#b3a890;font-family:Cinzel,serif}
+.route{background:#0f2a1c;color:#4bd57f;border:1px solid #4bd57f;border-radius:4px;font-family:Cinzel,serif}
+.nb{background:#121214;color:#c9bfa8;border:1px dashed #6b5318;border-radius:4px}.nb.has{background:#2a2216;color:#e0b43a;border:1px solid #e0b43a}
+#mix h5,#sim h5,#reg h5{font:700 16px Cinzel,serif;color:#e0b43a}
+.chip{background:#121214;border:1px solid #6b5318;color:#ece4d0}.chip b{color:#e0b43a}.chip button{color:#f08a7a}
+.out{background:#121214;border:1px solid #6b5318;border-radius:4px;color:#e6dfcf}.out .big{font:700 18px Cinzel,serif;color:#e0b43a}.out .ok{color:#4bd57f}.out .warn{color:#f08a7a}
+.cand span{background:#1d1d20;border:1px solid #3a3322;color:#e6dfcf}.cand .L{background:#3a1216;border-color:#d8323c}.cand .E{background:#33240f;border-color:#e08a3c}.cand .S{background:#132a3a;border-color:#6fb2e0}.cand b{color:#e0b43a}
+.leg,.rules,#rt th,#rsum{color:#b3a890}#reg{border-top:1px dashed #6b5318}#rt .x{color:#f08a7a}
+#nm{background:rgba(0,0,0,.75)}#nm .box{background:#1a1a1c;border:2px solid #e0b43a;border-radius:4px;color:#e6dfcf}#nm h3{font:700 20px Cinzel,serif;color:#e0b43a}#nm .sub{color:#b3a890}#nm .nt{background:#121214;border:1px solid #3a3322}#nm .nt small{color:#e0b43a}#nm .close{background:#26262a;color:#ece4d0}
+.ft{max-width:760px;margin:30px auto 0;padding:0 16px 30px;text-align:center;color:#9a917e;font-size:12px}
+.cloth{background:#6e1016;border-top:2px solid #8a6514;padding:14px 18px 24px;font:600 15px Cinzel,serif;letter-spacing:1px;color:#e6dfcf;clip-path:polygon(0 0,100% 0,100% 88%,93% 95%,86% 87%,78% 97%,70% 88%,61% 98%,52% 88%,44% 96%,35% 87%,27% 95%,18% 88%,9% 96%,0 88%)}
+.cloth b{color:#e0b43a}.ft p{margin:10px 0 0}
+@media(max-width:700px){.hd h1{font-size:23px}.emb{width:62px}.navw .pen{display:none}.hd nav{padding-top:0}}
+
+.wrapp{max-width:1100px;margin:0 auto;padding:10px 18px 40px;position:relative;z-index:1}
+.intro{text-align:center;margin:26px auto 30px;max-width:760px}
+.intro h2{font:700 30px 'Cinzel Decorative',Cinzel,serif;color:#e0b43a;margin:0 0 10px;letter-spacing:1px}
+.intro p{color:#e6dfcf;font:16px/1.6 Inter,sans-serif;margin:0}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.op{display:flex;flex-direction:column;text-decoration:none;color:#e6dfcf;background:linear-gradient(rgba(26,26,28,.82),rgba(15,15,17,.9));
+ border:1px solid #6b5318;box-shadow:inset 0 0 0 1px rgba(224,180,58,.15);padding:18px 20px 20px;position:relative;overflow:hidden;
+ -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);transition:transform .15s,border-color .15s}
+.op:hover{transform:translateY(-3px);border-color:#e0b43a}
+.op .pic{height:190px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:12px;
+ background:radial-gradient(circle at 50% 70%,rgba(75,213,127,.22),transparent 65%)}
+.op .pic img{max-height:190px;max-width:100%;filter:drop-shadow(0 0 14px rgba(75,213,127,.35))}
+.op h3{font:700 22px Cinzel,serif;color:#e0b43a;margin:0 0 6px}
+.op p{font:14.5px/1.55 Inter,sans-serif;margin:0 0 14px;color:#d8cfbb;flex:1}
+.op .go{align-self:flex-start;font:700 13px Cinzel,serif;letter-spacing:1px;color:#ece4d0;background:#6e1016;border:1px solid #e0b43a;padding:8px 14px}
+.toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 26px}
+.toc a{font:700 13px Cinzel,serif;color:#e0b43a;text-decoration:none;border:1px solid #6b5318;background:rgba(21,21,23,.85);padding:7px 12px}
+.toc a:hover{border-color:#e0b43a}
+.sec{display:flex;gap:22px;align-items:flex-start;margin:0 0 34px;scroll-margin-top:16px}
+.sec.r{flex-direction:row-reverse}
+.sec .g{flex:0 0 190px;text-align:center;position:sticky;top:12px}
+.sec .g img{width:100%;max-height:270px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(75,213,127,.3))}
+.sec .g b{display:block;font:700 13px Cinzel,serif;color:#e0b43a;margin-top:4px}
+.bub{flex:1;position:relative;background:linear-gradient(rgba(26,26,28,.9),rgba(15,15,17,.94));border:1px solid #6b5318;padding:18px 22px;
+ color:#e6dfcf;font:15px/1.65 Inter,sans-serif;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.bub:before{content:"";position:absolute;top:34px;left:-11px;border:10px solid transparent;border-right-color:#6b5318;border-left:0}
+.sec.r .bub:before{left:auto;right:-11px;border-right:0;border-left:10px solid #6b5318}
+.bub h3{font:700 21px Cinzel,serif;color:#e0b43a;margin:0 0 8px}
+.bub h4{font:700 15px Cinzel,serif;color:#4bd57f;margin:14px 0 4px}
+.bub ul,.bub ol{margin:6px 0 6px 20px;padding:0}.bub li{margin:3px 0}
+.bub b{color:#ece4d0}.bub .k{color:#e0b43a;font-weight:700}
+.bub .tip{margin-top:10px;padding:8px 12px;border-left:3px solid #4bd57f;background:rgba(75,213,127,.07);font-size:14px}
+.bub .pend{margin-top:10px;padding:10px 12px;border:1px dashed #e08a3c;color:#f0c08a;font-size:14px}
+.bub table{border-collapse:collapse;margin:8px 0;font-size:14px}.bub td,.bub th{border:1px solid #4a3c1a;padding:5px 9px;text-align:left}.bub th{color:#e0b43a}
+.L{color:#d8323c;font-weight:700}.E{color:#e08a3c;font-weight:700}.S{color:#6fb2e0;font-weight:700}
+.btn-ex{display:inline-block;font:700 12px Cinzel,serif;border:1px solid #6b5318;background:#1a1a1c;color:#b3a890;padding:3px 8px}
+@media(max-width:760px){.sec,.sec.r{flex-direction:column;align-items:center}.sec .g{position:static;flex:0 0 auto;width:150px}
+ .bub:before{display:none}.intro h2{font-size:24px}}
+.guard{display:none}</style></head><body>
+<div class="guard l" aria-hidden="true"><img alt=""></div><div class="guard r" aria-hidden="true"><img alt=""></div><script>(function(){var G=[["guardian_izq.webp",0,0],["guardian_der.webp",1,0],["guardian_guadana.webp",0,1],["guardian_cruzado.webp",0,1],["guardian_carnicero.webp",0,1]];var L=document.querySelector(".guard.l img"),R=document.querySelector(".guard.r img");if(!L||!R)return;function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x;}return a;}var cur=sh(G).slice(0,2);function put(p){L.src=p[0][0];L.style.transform=p[0][1]?"scaleX(-1)":"";R.src=p[1][0];R.style.transform=p[1][2]?"scaleX(-1)":"";}put(cur);var gs=document.querySelectorAll(".guard");function next(){var n;do{n=sh(G).slice(0,2);}while(n[0][0]===cur[0][0]&&n[1][0]===cur[1][0]);var c=0;n.forEach(function(g){var im=new Image();im.onload=im.onerror=function(){if(++c===2)swap(n);};im.src=g[0];});}function swap(n){gs.forEach(function(g){g.style.opacity="0";});setTimeout(function(){put(n);cur=n;gs.forEach(function(g){g.style.opacity="";});},1300);}if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))setInterval(function(){if(!document.hidden)next();},25000);})();</script><header class="hd"><div class="hdin"><div class="hdl"><img class="emb" src="emblema.png" alt="Emblema del gremio Necros"><div><h1>Manual de Necros</h1><p>Empires Reborn · Cómo usar el portal</p></div></div><div class="navw" style="gap:0"><div class="navw"><svg class="pen" width="46" height="96" viewBox="0 0 46 96" aria-hidden="true"><rect x="0" y="2" width="46" height="5" rx="2" fill="#8a6514"/><path d="M5 7h36v66l-5 5-4-7-5 9-4-6-5 10-4-8-4 7-5-6z" fill="#6e1016" stroke="#3d080c" stroke-width="1.5"/><circle cx="16" cy="40" r="3" fill="#151517"/><path d="M28 55l4 6" stroke="#151517" stroke-width="3"/><path d="M14 22h18M23 16v20" stroke="#4bd57f" stroke-width="2" opacity=".85"/></svg><nav><a href="./">Inicio</a><a href="codice.html">Códice</a><a href="mezclador.html">Soul Mixer</a><a class="on" href="manual.html">Manual</a></nav><svg class="pen" width="46" height="96" viewBox="0 0 46 96" aria-hidden="true"><rect x="0" y="2" width="46" height="5" rx="2" fill="#8a6514"/><path d="M5 7h36v66l-5 5-4-7-5 9-4-6-5 10-4-8-4 7-5-6z" fill="#6e1016" stroke="#3d080c" stroke-width="1.5"/><circle cx="16" cy="40" r="3" fill="#151517"/><path d="M28 55l4 6" stroke="#151517" stroke-width="3"/><path d="M14 22h18M23 16v20" stroke="#4bd57f" stroke-width="2" opacity=".85"/></svg></div><button id="ses" class="mus" type="button">👤 Iniciar sesión</button><button id="musica" class="mus" type="button" title="Música de fondo" aria-pressed="false">🔇 Música</button></div></div></header>
+<div class="wrapp"><div class="intro"><h2>Manual del gremio</h2><p>Todo lo que necesitas saber para usar el portal de Necros.</p></div><nav class="toc"><a href="#bienvenida">Bienvenida</a><a href="#sesion">Iniciar sesión</a><a href="#codice">Códice</a><a href="#notas">Notas y rareza</a><a href="#mixer">Soul Mixer</a><a href="#reglas">Reglas</a><a href="#extras">Extras</a></nav><section class="sec" id="bienvenida">
+<div class="g"><img src="guardian_izq.webp" alt=""><b>El guardián del hacha</b></div>
+<div class="bub"><h3>Bienvenido a Necros</h3>
+<p>Soy uno de los guardianes de esta cripta. Con mis compañeros te vamos a explicar cómo funciona todo.</p>
+<p>Esta web es <b>del gremio</b>: todo lo que registres (mezclas, notas, votos) lo ven los demás miembros y ayuda a que todos juguemos mejor.
+Solo necesitas guardar <b>un link</b>: el de la página de <b>Inicio</b>, donde está el menú.</p>
+<h4>Lo que hay en el portal</h4>
+<ul><li><span class="k">Códice</span>: todas las unidades del juego con sus datos y habilidades.</li>
+<li><span class="k">Soul Mixer</span>: simulador de mezclas y la base de mezclas del gremio.</li>
+<li><span class="k">Manual</span>: esta página.</li></ul>
+<div class="tip">Funciona en computadora y en celular. Si algo se ve raro después de una actualización, recarga con <b>Ctrl + F5</b> (en el celular, cierra y vuelve a abrir la pestaña).</div></div></section><section class="sec r" id="sesion">
+<div class="g"><img src="guardian_der.webp" alt=""><b>El encapuchado</b></div>
+<div class="bub"><h3>Iniciar sesión</h3>
+<p>Al entrar te aparece una ventana para iniciar sesión. Pide dos cosas:</p>
+<ol><li><b>Gremio:</b> escribe <span class="k">NECROS</span> (mayúsculas o minúsculas, da igual).</li>
+<li><b>Tu nombre en el juego</b>, tal como te conocemos.</li></ol>
+<p>Con eso, todo lo que registres queda firmado con tu nombre. Si solo quieres consultar, toca <b>Solo mirar</b>.</p>
+<h4>Bueno saber</h4>
+<ul><li>La sesión <b>se recuerda</b>: no tienes que volver a iniciarla cada vez.</li>
+<li>Es por navegador: si entras desde el celular y la computadora, inicias sesión una vez en cada uno.</li>
+<li>Tu nombre aparece arriba (👤). Tócalo si quieres <b>cerrar sesión</b>.</li>
+<li>En modo incógnito o si borras los datos del navegador, se olvida.</li></ul>
+<div class="tip">Usa siempre el mismo nombre: así Saeh puede saber quién registró qué y corregir si hace falta.</div></div></section><section class="sec" id="codice">
+<div class="g"><img src="guardian_guadana.webp" alt=""><b>El segador</b></div>
+<div class="bub"><h3>El Códice</h3>
+<p>Aquí están todas las unidades, agrupadas por colección. Cada carta muestra:</p>
+<ul><li><b>Poder</b> (ataque × vida ÷ 10): es el número que usan la arena y el Soul Mixer.</li>
+<li><b>Estadísticas</b>: ataque, vida, alcance, velocidad, velocidad de ataque y población.</li>
+<li><b>Habilidades</b>, revisadas en el código del juego:
+ <ul><li><span class="k">⚡</span> habilidades que se activan (con botón o cada cierto tiempo / cada cierto número de ataques).</li>
+ <li><span class="k">◆</span> pasivas que siempre están activas.</li></ul></li></ul>
+<h4>Buscar y filtrar</h4>
+<p>Arriba tienes el buscador (por nombre <b>o por habilidad</b>, por ejemplo “congela” o “cura”) y filtros por colección, tipo, clase, habilidad, solo voladoras y rango de poder.</p>
+<h4>Animaciones</h4>
+<p>Pasa el mouse por una unidad (o tócala en el celular) y la verás <b>caminar y atacar</b>, como en el juego.</p>
+<div class="tip">Las descripciones salen del código original de Social Empires. Si en Reborn ves algo distinto, déjalo en una nota de la unidad.</div></div></section><section class="sec r" id="notas">
+<div class="g"><img src="guardian_cruzado.webp" alt=""><b>El cruzado</b></div>
+<div class="bub"><h3>Notas y rareza</h3>
+<p>Cada carta tiene el botón <span class="btn-ex">📝 Nota · ★ Rareza</span>. Al abrirlo puedes hacer dos cosas:</p>
+<h4>Votar la rareza</h4>
+<p>La rareza es de Reborn y no viene en los datos del juego, así que la completamos entre todos. Si tienes la unidad, mira sus estrellas y vota:</p>
+<table><tr><th>Estrellas</th><th>Rareza</th></tr><tr><td>★★</td><td class="S">Especial</td></tr><tr><td>★★★★</td><td class="E">Épica</td></tr><tr><td>★★★★★</td><td class="L">Legendaria</td></tr></table>
+<ul><li>Un voto por persona y unidad. Toca otra rareza para <b>cambiar</b> tu voto, o la misma para <b>quitarlo</b>.</li>
+<li>En la carta aparece la más votada con borde punteado, por ejemplo “Épica · gremio (3)”.</li>
+<li>Las rarezas ya <b>confirmadas</b> no se votan.</li></ul>
+<h4>Dejar una nota</h4>
+<p>Para todo lo que sirva al gremio: cambios que trajo Reborn (ataque, vida…), consejos, para qué sirve, cómo conseguirla.</p>
+<div class="tip">Vota solo lo que hayas visto en el juego. Saeh revisa la base y borra lo que no cuadre.</div></div></section><section class="sec" id="mixer">
+<div class="g"><img src="guardian_carnicero.webp" alt=""><b>El carnicero</b></div>
+<div class="bub"><h3>El Soul Mixer</h3>
+<p>El Soul Mixer del juego junta dos tropas y te da una nueva. Esto es lo que sabemos (comprobado por el gremio):</p>
+<ul><li><b>Compatibilidad:</b> el poder de cada tropa cae en un tramo (menos de 100 · 100–300 · 300–1000 · 1000–2000 · más de 2000). Solo se mezclan tropas del <b>mismo tramo o de tramos vecinos</b>.</li>
+<li><b>Resultados:</b> salen unidades con un poder de entre el <b>55 % y el 90 %</b> de la suma de las dos. Cada pareja tiene su lista fija y el orden no importa.</li>
+<li><b>Rareza:</b> <span class="L">Legendaria</span> + <span class="L">Legendaria</span> = 100 % Legendaria. Cualquier otra pareja: 97 % <span class="E">Épica</span> y 3 % <span class="L">Legendaria</span>.</li>
+<li><b>Piedras del alma:</b> cada mezcla pide 2 o 3 (según la pareja) y protegen a las tropas que mezclas.</li>
+<li><b>Tiempo:</b> de 8 a 16 horas. Acelerar cuesta 1 cash por hora.</li>
+<li>Puedes gastar cash para subir la probabilidad del resultado que quieres.</li>
+<li>Los <b>jinetes de dragón</b> no entran ni salen del Soul Mixer.</li></ul>
+<h4>En la página del Soul Mixer</h4>
+<ol><li><b>Simulador:</b> elige dos tropas y te dice si se pueden mezclar y qué podría salir.</li>
+<li><b>Mezclas del gremio:</b> si alguien ya la registró, verás la lista real con sus porcentajes.</li>
+<li><b>Ruta:</b> elige el dragón o la unidad que quieres y te propone mezclas para llegar.</li>
+<li><b>Registrar una mezcla:</b> cuando hagas una en el juego, copia la lista de posibles resultados con sus % (deben sumar ~100 %) y regístrala. ¡Así el simulador mejora para todos!</li></ol>
+<div class="tip">Desde cualquier carta del Códice puedes tocar “Cómo conseguirla” para ir directo a la ruta de esa unidad.</div></div></section><section class="sec r" id="reglas">
+<div class="g"><img src="guardian_izq.webp" alt=""><b>El guardián del hacha</b></div>
+<div class="bub"><h3>Reglas del gremio</h3>
+<div class="pend">Saeh publicará aquí las reglas de Necros.</div>
+<p>Mientras tanto, lo básico para usar el portal:</p>
+<ul><li>Registra solo mezclas, notas y rarezas que hayas visto tú en el juego.</li>
+<li>Usa siempre el mismo nombre al iniciar sesión.</li>
+<li>Si te equivocaste, avisa a Saeh para que lo corrija en la base.</li></ul></div></section><section class="sec" id="extras">
+<div class="g"><img src="guardian_der.webp" alt=""><b>El encapuchado</b></div>
+<div class="bub"><h3>Extras</h3>
+<ul><li><b>🔇 Música:</b> el botón de arriba pone la música de fondo del gremio (“Cripta de Necros”). Tu elección se recuerda.</li>
+<li><b>Guardianes:</b> a los costados de las páginas nos vamos turnando cada 25 segundos.</li>
+<li><b>Dudas o errores:</b> habla con Saeh. Si es sobre una unidad, déjalo como nota en su carta.</li></ul>
+<p>Eso es todo, nigromante. ¡Ahora ve y haz crecer a Necros!</p></div></section></div>
+<footer class="ft"><div class="cloth">Forjado por <b>Saeh</b> para el gremio Necros</div><p>Portal del gremio Necros · Empires Reborn</p><p class="mcred">Música: «Cripta de Necros», remix hecho con Suno</p></footer><script>
+(function(){
+var K='necros_sesion';
+function get(){try{var s=JSON.parse(localStorage.getItem(K)||'null');return s&&s.usuario&&String(s.gremio).toUpperCase()==='NECROS'?s:null}catch(e){return null}}
+function set(s){try{if(s)localStorage.setItem(K,JSON.stringify(s));else localStorage.removeItem(K)}catch(e){};paint();document.dispatchEvent(new CustomEvent('necros-sesion',{detail:s}))}
+var btn=document.getElementById('ses');
+function paint(){if(!btn)return;var s=get();btn.textContent=s?('👤 '+s.usuario):'👤 Iniciar sesión';btn.classList.toggle('on',!!s);btn.title=s?('Sesión: '+s.usuario+' · Necros (toca para salir)'):'Inicia sesión para registrar mezclas y notas'}
+var m=document.createElement('div');m.id='sesm';m.hidden=true;
+m.innerHTML='<div class="box"><h3>Iniciar sesión</h3><p>Bienvenido al Códice de Necros. Inicia sesión para que tus mezclas y notas queden registradas con tu nombre.</p><label>Gremio</label><input id="sesg" placeholder="Nombre del gremio" autocomplete="off"><label>Tu nombre en el juego</label><input id="sesu" maxlength="40" autocomplete="nickname"><div class="er" id="sese"></div><div class="b"><button class="ok" id="seso">Entrar</button><button class="no" id="sesc">Solo mirar</button></div></div>';
+document.body.appendChild(m);
+function open(){m.hidden=false;document.getElementById('sese').textContent='';document.getElementById('sesg').value='';document.getElementById('sesu').value='';setTimeout(function(){document.getElementById('sesg').focus()},30)}
+function close(){m.hidden=true}
+document.getElementById('sesc').onclick=close;m.addEventListener('click',function(e){if(e.target===m)close()});
+function enter(){var g=document.getElementById('sesg').value.trim(),u=document.getElementById('sesu').value.trim(),er=document.getElementById('sese');
+ if(g.toUpperCase()!=='NECROS'){er.textContent='Ese no es el gremio. Escribe NECROS.';return}
+ if(!u){er.textContent='Escribe tu nombre en el juego.';return}
+ set({gremio:'NECROS',usuario:u.slice(0,40)});close()}
+document.getElementById('seso').onclick=enter;m.addEventListener('keydown',function(e){if(e.key==='Enter')enter();if(e.key==='Escape')close()});
+if(btn)btn.addEventListener('click',function(){var s=get();if(s){if(confirm('¿Cerrar la sesión de '+s.usuario+'?'))set(null)}else open()});
+window.necrosSesion=get;window.necrosLogin=open;paint();
+var visto=false;try{visto=sessionStorage.getItem('necros_popup')==='1';sessionStorage.setItem('necros_popup','1')}catch(e){}
+if(!get()&&!visto)setTimeout(open,400);
+})();
+</script><script>
+(function(){
+var btn=document.getElementById('musica');if(!btn)return;
+var AC=window.AudioContext||window.webkitAudioContext;if(!AC){btn.style.display='none';return;}
+var ctx=null,master=null,verb=null,on=false,loopT=null,nextStart=0,BPM=72,B=60/BPM,LOOP=64;
+function pref(v){try{if(v===undefined)return localStorage.getItem('necros_musica');localStorage.setItem('necros_musica',v);}catch(e){return null;}}
+function hz(m){return 440*Math.pow(2,(m-69)/12);}
+function mkVerb(){var len=ctx.sampleRate*3,b=ctx.createBuffer(2,len,ctx.sampleRate);for(var c=0;c<2;c++){var d=b.getChannelData(c);for(var i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6);}var cv=ctx.createConvolver();cv.buffer=b;var g=ctx.createGain();g.gain.value=.35;cv.connect(g);g.connect(master);return cv;}
+function out(n,dry){n.connect(master);if(dry!==true)n.connect(verb);}
+function drum(t,v){var o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.setValueAtTime(95,t);o.frequency.exponentialRampToValueAtTime(38,t+.35);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.9*v,t+.008);g.gain.exponentialRampToValueAtTime(.001,t+.9);o.connect(g);out(g);o.start(t);o.stop(t+1);
+ var n=ctx.createBufferSource(),nb=ctx.createBuffer(1,ctx.sampleRate*.25,ctx.sampleRate),d=nb.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;n.buffer=nb;var f=ctx.createBiquadFilter();f.type='lowpass';f.frequency.value=900;var ng=ctx.createGain();ng.gain.setValueAtTime(.25*v,t);ng.gain.exponentialRampToValueAtTime(.001,t+.2);n.connect(f);f.connect(ng);out(ng);n.start(t);}
+function pad(t,notes,dur){notes.forEach(function(m){[-6,6].forEach(function(dt){var o=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter();o.type='sawtooth';o.frequency.value=hz(m);o.detune.value=dt;f.type='lowpass';f.frequency.value=700;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.035,t+1.2);g.gain.setValueAtTime(.035,t+dur-.8);g.gain.linearRampToValueAtTime(0,t+dur+.4);o.connect(f);f.connect(g);out(g);o.start(t);o.stop(t+dur+.5);});});}
+function horn(t,m,dur,v){var o=ctx.createOscillator(),o2=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter(),l=ctx.createOscillator(),lg=ctx.createGain();o.type='sawtooth';o2.type='square';o.frequency.value=hz(m);o2.frequency.value=hz(m-12);l.frequency.value=5;lg.gain.value=4;l.connect(lg);lg.connect(o.detune);f.type='lowpass';f.Q.value=2;f.frequency.setValueAtTime(400,t);f.frequency.linearRampToValueAtTime(1500,t+.12);f.frequency.linearRampToValueAtTime(900,t+dur);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12*v,t+.08);g.gain.setValueAtTime(.1*v,t+dur*.8);g.gain.linearRampToValueAtTime(0,t+dur+.05);o.connect(f);o2.connect(f);f.connect(g);out(g);[o,o2,l].forEach(function(x){x.start(t);x.stop(t+dur+.1);});}
+function bell(t,m){[1,2.76,5.4].forEach(function(r,k){var o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=hz(m)*r;g.gain.setValueAtTime(.08/(k+1),t);g.gain.exponentialRampToValueAtTime(.0008,t+4);o.connect(g);out(g);o.start(t);o.stop(t+4.2);});}
+function drone(t,dur){[38,45].forEach(function(m){var o=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter(),l=ctx.createOscillator(),lg=ctx.createGain();o.type='sawtooth';o.frequency.value=hz(m);f.type='lowpass';f.frequency.value=260;l.frequency.value=.07;lg.gain.value=120;l.connect(lg);lg.connect(f.frequency);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.06,t+3);g.gain.setValueAtTime(.06,t+dur-2);g.gain.linearRampToValueAtTime(0,t+dur+1);o.connect(f);f.connect(g);out(g);[o,l].forEach(function(x){x.start(t);x.stop(t+dur+1.2);});});}
+var CH=[[50,57,62,65],[46,53,58,62],[43,55,58,62],[45,52,57,61]];
+var A=[[62,2],[65,1],[64,1],[62,2],[57,2],[58,3],[57,1],[55,2],[57,2]];
+var Bm=[[62,2],[65,2],[67,1],[69,1],[70,2],[69,2],[67,1],[65,1],[64,2],[61,2]];
+var DR=[[0,1],[2,.6],[2.5,.4],[3,.8]],FILL=[[0,1],[1,.6],[1.5,.6],[2,.8],[2.5,.7],[3,1],[3.5,.9]];
+function phrase(t,mel,oct,v){var b=0;mel.forEach(function(n){horn(t+b*B,n[0]+oct,n[1]*B*.95,v);b+=n[1];});}
+function loop(t){drone(t,LOOP*B);for(var p=0;p<4;p++){var tp=t+p*16*B;bell(tp,74);for(var bar=0;bar<4;bar++){var tb=tp+bar*4*B;pad(tb,CH[bar],4*B);var pat=(bar==3&&p%2==1)?FILL:DR;pat.forEach(function(d){drum(tb+d[0]*B,d[1]*(p==0?.6:1));});}
+ if(p==1)phrase(tp,A,0,.8);if(p==2)phrase(tp,Bm,0,1);if(p==3){phrase(tp,A,0,1);phrase(tp,A,-12,.5);}}}
+function sched(){if(!on)return;loop(nextStart);nextStart+=LOOP*B;loopT=setTimeout(sched,(nextStart-ctx.currentTime-4)*1000);}
+function sStart(){if(!ctx){ctx=new AC();master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);verb=mkVerb();}
+ ctx.resume();on=true;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setValueAtTime(master.gain.value,ctx.currentTime);master.gain.linearRampToValueAtTime(.32,ctx.currentTime+2);
+ if(nextStart<ctx.currentTime+.1){nextStart=ctx.currentTime+.15;sched();}}
+function sStop(){on=false;clearTimeout(loopT);if(ctx){master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setValueAtTime(master.gain.value,ctx.currentTime);master.gain.linearRampToValueAtTime(0,ctx.currentTime+.8);setTimeout(function(){if(!on){ctx.suspend();nextStart=0;}},900);}}
+
+var au=new Audio(),useFile=true,fadeT=null,playing=false;au.src='musica.mp3';au.loop=true;au.preload='none';au.volume=0;
+function fade(to,ms,done){clearInterval(fadeT);var from=au.volume,t0=Date.now();fadeT=setInterval(function(){var k=Math.min(1,(Date.now()-t0)/ms);au.volume=from+(to-from)*k;if(k>=1){clearInterval(fadeT);if(done)done();}},50);}
+au.addEventListener('error',function(){if(useFile){useFile=false;if(playing)sStart();}});
+function ui(v){playing=v;btn.textContent=v?'🔊 Música':'🔇 Música';btn.classList.toggle('on',v);btn.setAttribute('aria-pressed',v?'true':'false');}
+function start(){ui(true);if(!useFile){sStart();return;}var p=au.play();if(p&&p.then)p.then(function(){fade(.45,2000);}).catch(function(e){if(e&&e.name==='NotAllowedError'){ui(false);return;}useFile=false;sStart();});else fade(.45,2000);}
+function stop(){ui(false);if(useFile)fade(0,800,function(){if(!playing)au.pause();});else sStop();}
+btn.addEventListener('click',function(e){e.stopPropagation();if(playing){stop();pref('0');}else{start();pref('1');}});
+if(pref()==='1'){var first=function(){document.removeEventListener('pointerdown',first,true);document.removeEventListener('keydown',first,true);if(!playing)start();};document.addEventListener('pointerdown',first,true);document.addEventListener('keydown',first,true);btn.textContent='🔈 Música (toca la página)';}
+})();
+</script>
+</body></html>
