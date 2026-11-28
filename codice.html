@@ -59,7 +59,7 @@ footer{color:#f3e5b4;text-align:center;font-size:12px;padding:6px 0 26px}
 .out{background:#fffbea;border:3px solid #8a5426;border-radius:12px;padding:12px 14px;min-height:120px}
 .out .big{font:800 18px Georgia,serif;color:#174a3c}.out ol{margin:6px 0 0;padding-left:20px}.out li{margin:4px 0}
 .out .ok{color:#174a3c;font-weight:800}.out .warn{color:#8a3a12;font-size:13px;margin-top:8px}
-.cand{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.cand span{background:#f3e5b4;border:1px solid #d6b56a;border-radius:10px;padding:2px 8px;font-size:12.5px;font-weight:700}.cand .L{background:#f6d6dc;border-color:#b63e52}.cand .E{background:#f3dcc4;border-color:#b46d30}.cand .S{background:#d8e8f3;border-color:#398dbe}.cand b{color:#8a5426}.leg{font-size:12px;color:#5c3613;margin-top:4px}
+.cand{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.cand span{background:#f3e5b4;border:1px solid #d6b56a;border-radius:10px;padding:2px 8px;font-size:12.5px;font-weight:700}.cand .L{background:#f6d6dc;border-color:#b63e52}.cand .E{background:#f3dcc4;border-color:#b46d30}.cand .S{background:#d8e8f3;border-color:#398dbe}.cand .R{background:#e6dcf5;border-color:#7b4fc0}.cand .N{background:#dcefd6;border-color:#4f8f3f}.cand b{color:#8a5426}.leg{font-size:12px;color:#5c3613;margin-top:4px}
 #reg{margin-top:18px;border-top:2px dashed #c9a35a;padding-top:14px}
 #reg h5{margin:0 0 6px;font:800 16px Georgia,serif;color:#174a3c}
 .regf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
@@ -142,8 +142,8 @@ section::before{left:8px}section::after{right:8px}
 .img .alab.v{opacity:1}.card[data-an] .img{cursor:help}
 .nav{display:inline-block;margin-top:10px;font:800 15px 'Trebuchet MS',sans-serif;color:#fff3cf;background:linear-gradient(#2c6b58,#174a3c);border:2px solid #e5b445;border-radius:10px;padding:8px 16px;text-decoration:none}.nav:hover{filter:brightness(1.15)}.rarb{margin:6px 0 10px;padding:8px 10px;border:1px solid #6b5318;background:rgba(0,0,0,.25)}.rarb b{color:#e0b43a;margin-right:6px}
 .rv{font:700 12px Cinzel,serif;padding:5px 9px;margin:3px 4px 3px 0;cursor:pointer;background:#1a1a1c;color:#ece4d0;border:1px solid #6b5318}.rv small{opacity:.75;margin-left:3px}
-.rv.S{border-color:#6fb2e0}.rv.E{border-color:#e08a3c}.rv.L{border-color:#d8323c}.rv.me{background:#2a0b0e;outline:2px solid #e0b43a}.rv:disabled{opacity:.6;cursor:default}
-.tag.rg{border:1px dashed currentColor}.tag.rg.S{color:#6fb2e0}.tag.rg.E{color:#e08a3c}.tag.rg.L{color:#d8323c}
+.rv.N{border-color:#6fbf5a}.rv.R{border-color:#a77be6}.rv.S{border-color:#6fb2e0}.rv.E{border-color:#e08a3c}.rv.L{border-color:#d8323c}.rv.me{background:#2a0b0e;outline:2px solid #e0b43a}.rv:disabled{opacity:.6;cursor:default}
+.tag.rg{border:1px dashed currentColor}.tag.rg.N{color:#6fbf5a}.tag.rg.R{color:#a77be6}.tag.rg.S{color:#6fb2e0}.tag.rg.E{color:#e08a3c}.tag.rg.L{color:#d8323c}
 .nb{display:block;width:100%;margin-top:6px;font:800 12px 'Trebuchet MS',sans-serif;color:#5c3613;background:#f3e5b4;border:2px dashed #c9a35a;border-radius:8px;padding:5px;cursor:pointer}.nb.has{background:#fde7a6;border-style:solid;border-color:#a8692f;color:#3a210c}
 #nm{position:fixed;inset:0;background:rgba(20,12,4,.65);display:flex;align-items:center;justify-content:center;z-index:50;padding:12px}
 #nm .box{background:#fbf1d3;border:6px solid #8a5426;border-radius:16px;max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:16px 18px}
@@ -8085,8 +8085,8 @@ run();
 
 // ---- Notas del gremio por unidad ----
 const API=(window.API_URL||'').trim(); let NOTAS={}, RAR={};
-const RN2={S:'Especial',E:'Épica',L:'Legendaria'};
-function rarTop(id){const v=RAR[id]; if(!v)return null; let best=null,n=0,tot=0; for(const k of ['L','E','S']){tot+=v[k]||0; if((v[k]||0)>n){n=v[k];best=k}} return best?{r:best,n:n,tot:tot}:null}
+const RN2={N:'Normal',S:'Especial',R:'Rara',E:'Épica',L:'Legendaria'};
+function rarTop(id){const v=RAR[id]; if(!v)return null; let best=null,n=0,tot=0; for(const k of ['L','E','R','S','N']){tot+=v[k]||0; if((v[k]||0)>n){n=v[k];best=k}} return best?{r:best,n:n,tot:tot}:null}
 function paintRar(){cards.forEach(c=>{const id=c.dataset.id, conf=c.dataset.k, tg=c.querySelector('.tags'); if(!tg)return; let s=tg.querySelector('.rg');
  const t=conf?null:rarTop(id); if(!t){if(s)s.remove(); if(!conf)c.dataset.kv=''; return}
  if(!s){s=document.createElement('span');s.className='tag rg';tg.appendChild(s)} s.className='tag rg '+t.r; s.textContent=RN2[t.r]+' · gremio ('+t.n+')'; s.title='Rareza votada por el gremio: '+t.n+' de '+t.tot+' votos (sin confirmar)'; c.dataset.kv=t.r})}
@@ -8101,7 +8101,7 @@ const nm=document.createElement('div'); nm.id='nm'; nm.hidden=true; document.bod
 function openNotes(id){cur=id; const c=document.querySelector(`.card[data-id="${id}"]`), n=c.querySelector('h4').textContent, L=(NOTAS[id]||[]).slice().reverse();
  const ses=window.necrosSesion&&necrosSesion(), conf=c.dataset.k, v=RAR[id]||{S:0,E:0,L:0,by:{}}, mine=ses?v.by[ses.usuario.toLowerCase()]:null;
  const rarHtml=conf?`<div class="rarb"><b>Rareza:</b> ${RN2[conf]} <span class="sub">(confirmada)</span></div>`
-  :`<div class="rarb"><b>Rareza:</b> ${['S','E','L'].map(k=>`<button class="rv ${k}${mine===k?' me':''}" data-r="${k}" ${API?'':'disabled'}>${RN2[k]} <small>${v[k]||0}</small></button>`).join('')}<div class="sub">¿La tienes en el juego? Vota sus estrellas: ★★ Especial · ★★★★ Épica · ★★★★★ Legendaria.${mine?' Tu voto: '+RN2[mine]+'. Toca otra para cambiarlo o la misma para quitarlo.':''}</div><span id="rmsg2"></span></div>`;
+  :`<div class="rarb"><b>Rareza:</b> ${['N','S','R','E','L'].map(k=>`<button class="rv ${k}${mine===k?' me':''}" data-r="${k}" ${API?'':'disabled'}>${RN2[k]} <small>${v[k]||0}</small></button>`).join('')}<div class="sub">¿La tienes en el juego? Vota sus estrellas: ★ Normal · ★★ Especial · ★★★ Rara · ★★★★ Épica · ★★★★★ Legendaria.${mine?' Tu voto: '+RN2[mine]+'. Toca otra para cambiarlo o la misma para quitarlo.':''}</div><span id="rmsg2"></span></div>`;
  nm.innerHTML=`<div class="box"><h3>📝 ${esc(n)}</h3>${rarHtml}<div class="sub">Notas del gremio: cambios del Reborn, consejos, lo que hayan visto.</div>
  ${L.length?L.map(x=>`<div class="nt">${esc(x.nota)}<small>${esc(x.jugador)} · ${esc(x.fecha)}</small></div>`).join(''):'<div class="sub"><i>Todavía no hay notas para esta unidad.</i></div>'}
  ${API?`<textarea id="ntx" rows="3" maxlength="500" placeholder="Ej.: En el Reborn tiene 27 de ataque (antes 26)."></textarea>

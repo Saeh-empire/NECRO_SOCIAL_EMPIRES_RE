@@ -99,7 +99,7 @@ section::before{left:8px}section::after{right:8px}
 .bub .tip{margin-top:10px;padding:8px 12px;border-left:3px solid #4bd57f;background:rgba(75,213,127,.07);font-size:14px}
 .bub .pend{margin-top:10px;padding:10px 12px;border:1px dashed #e08a3c;color:#f0c08a;font-size:14px}
 .bub table{border-collapse:collapse;margin:8px 0;font-size:14px}.bub td,.bub th{border:1px solid #4a3c1a;padding:5px 9px;text-align:left}.bub th{color:#e0b43a}
-.L{color:#d8323c;font-weight:700}.E{color:#e08a3c;font-weight:700}.S{color:#6fb2e0;font-weight:700}
+.N{color:#6fbf5a;font-weight:700}.R{color:#a77be6;font-weight:700}.L{color:#d8323c;font-weight:700}.E{color:#e08a3c;font-weight:700}.S{color:#6fb2e0;font-weight:700}
 .btn-ex{display:inline-block;font:700 12px Cinzel,serif;border:1px solid #6b5318;background:#1a1a1c;color:#b3a890;padding:3px 8px}
 @media(max-width:760px){.sec,.sec.r{flex-direction:column;align-items:center}.sec .g{position:static;flex:0 0 auto;width:150px}
  .bub:before{display:none}.intro h2{font-size:24px}}
@@ -146,7 +146,7 @@ Solo necesitas guardar <b>un link</b>: el de la página de <b>Inicio</b>, donde 
 <p>Cada carta tiene el botón <span class="btn-ex">📝 Nota · ★ Rareza</span>. Al abrirlo puedes hacer dos cosas:</p>
 <h4>Votar la rareza</h4>
 <p>La rareza es de Reborn y no viene en los datos del juego, así que la completamos entre todos. Si tienes la unidad, mira sus estrellas y vota:</p>
-<table><tr><th>Estrellas</th><th>Rareza</th></tr><tr><td>★★</td><td class="S">Especial</td></tr><tr><td>★★★★</td><td class="E">Épica</td></tr><tr><td>★★★★★</td><td class="L">Legendaria</td></tr></table>
+<table><tr><th>Estrellas</th><th>Rareza</th></tr><tr><td>★</td><td class="N">Normal</td></tr><tr><td>★★</td><td class="S">Especial</td></tr><tr><td>★★★</td><td class="R">Rara</td></tr><tr><td>★★★★</td><td class="E">Épica</td></tr><tr><td>★★★★★</td><td class="L">Legendaria</td></tr></table>
 <ul><li>Un voto por persona y unidad. Toca otra rareza para <b>cambiar</b> tu voto, o la misma para <b>quitarlo</b>.</li>
 <li>En la carta aparece la más votada con borde punteado, por ejemplo “Épica · gremio (3)”.</li>
 <li>Las rarezas ya <b>confirmadas</b> no se votan.</li></ul>
@@ -154,20 +154,24 @@ Solo necesitas guardar <b>un link</b>: el de la página de <b>Inicio</b>, donde 
 <p>Para todo lo que sirva al gremio: cambios que trajo Reborn (ataque, vida…), consejos, para qué sirve, cómo conseguirla.</p>
 <div class="tip">Vota solo lo que hayas visto en el juego. Saeh revisa la base y borra lo que no cuadre.</div></div></section><section class="sec" id="mixer">
 <div class="g"><img src="guardian_carnicero.webp" alt=""><b>El carnicero</b></div>
-<div class="bub"><h3>El Soul Mixer</h3>
-<p>El Soul Mixer del juego junta dos tropas y te da una nueva. Esto es lo que sabemos (comprobado por el gremio):</p>
-<ul><li><b>Compatibilidad:</b> el poder de cada tropa cae en un tramo (menos de 100 · 100–300 · 300–1000 · 1000–2000 · más de 2000). Solo se mezclan tropas del <b>mismo tramo o de tramos vecinos</b>.</li>
-<li><b>Resultados:</b> salen unidades con un poder de entre el <b>55 % y el 90 %</b> de la suma de las dos. Cada pareja tiene su lista fija y el orden no importa.</li>
-<li><b>Rareza:</b> <span class="L">Legendaria</span> + <span class="L">Legendaria</span> = 100 % Legendaria. Cualquier otra pareja: 97 % <span class="E">Épica</span> y 3 % <span class="L">Legendaria</span>.</li>
-<li><b>Piedras del alma:</b> cada mezcla pide 2 o 3 (según la pareja) y protegen a las tropas que mezclas.</li>
-<li><b>Tiempo:</b> de 8 a 16 horas. Acelerar cuesta 1 cash por hora.</li>
-<li>Puedes gastar cash para subir la probabilidad del resultado que quieres.</li>
-<li>Los <b>jinetes de dragón</b> no entran ni salen del Soul Mixer.</li></ul>
+<div class="bub"><h3>El Mezclador de Almas (Soul Mixer)</h3>
+<p>Así funciona según la explicación oficial del juego:</p>
+<ol><li>Eliges <b>dos tropas libres</b> de tu reino. No todas se mezclan entre sí: al elegir una, en la otra alma solo ves las <b>compatibles</b>.</li>
+<li>Al mezclar, <b>las dos se pierden</b> (no van al cementerio) y sale <b>1 tropa al azar, más fuerte que la mejor</b> de las dos. <b>Dos Normales dan una Especial</b> si hay una compatible en su rango de poder.</li>
+<li><b>Probabilidades</b> muestra qué puede salir. Puedes elegir una tropa y pagar <b>cash</b> para subir su probabilidad.</li>
+<li>Si pones un <b>cristal de almas</b> en la ranura, <b>las dos tropas vuelven</b>. Cuesta de <b>1 a 8 cristales</b>, según la generación.</li>
+<li>La espera depende de la <b>generación</b> de la tropa que salga: de <b>5 a 106 horas</b>. Cuando termine, recoges tu tropa nueva.</li></ol>
+<div class="tip"><b>Sin cristal</b>, con suerte recuperas tropas: <b>14 %</b> una y <b>6 %</b> las dos. Si falta alguna, puedes rescatarla pagando oro.</div>
+<h4>Lo que además comprobamos en el gremio</h4>
+<ul><li>Compatibilidad por tramos de poder (menos de 100 · 100–300 · 300–1000 · 1000–2000 · más de 2000): mismo tramo o tramos vecinos.</li>
+<li>Los resultados rondan entre el 55 % y el 90 % de la suma del poder de las dos, y cada pareja tiene su lista fija (el orden no importa).</li>
+<li><span class="L">Legendaria</span> + <span class="L">Legendaria</span> dio 100 % Legendaria; otras parejas, 97 % <span class="E">Épica</span> y 3 % <span class="L">Legendaria</span>.</li>
+<li>Acelerar cuesta 1 cash por hora. Los <b>jinetes de dragón</b> no entran ni salen.</li></ul>
 <h4>En la página del Soul Mixer</h4>
 <ol><li><b>Simulador:</b> elige dos tropas y te dice si se pueden mezclar y qué podría salir.</li>
 <li><b>Mezclas del gremio:</b> si alguien ya la registró, verás la lista real con sus porcentajes.</li>
 <li><b>Ruta:</b> elige el dragón o la unidad que quieres y te propone mezclas para llegar.</li>
-<li><b>Registrar una mezcla:</b> cuando hagas una en el juego, copia la lista de posibles resultados con sus % (deben sumar ~100 %) y regístrala. ¡Así el simulador mejora para todos!</li></ol>
+<li><b>Registrar una mezcla:</b> cuando hagas una en el juego, copia la lista de «Probabilidades» con sus % (deben sumar ~100 %) y regístrala. ¡Así el simulador mejora para todos!</li></ol>
 <div class="tip">Desde cualquier carta del Códice puedes tocar “Cómo conseguirla” para ir directo a la ruta de esa unidad.</div></div></section><section class="sec r" id="reglas">
 <div class="g"><img src="guardian_izq.webp" alt=""><b>El guardián del hacha</b></div>
 <div class="bub"><h3>Reglas del gremio</h3>
