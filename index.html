@@ -8101,7 +8101,7 @@ const nm=document.createElement('div'); nm.id='nm'; nm.hidden=true; document.bod
 function openNotes(id){cur=id; const c=document.querySelector(`.card[data-id="${id}"]`), n=c.querySelector('h4').textContent, L=(NOTAS[id]||[]).slice().reverse();
  const ses=window.necrosSesion&&necrosSesion(), conf=c.dataset.k, v=RAR[id]||{S:0,E:0,L:0,by:{}}, mine=ses?v.by[ses.usuario.toLowerCase()]:null;
  const rarHtml=conf?`<div class="rarb"><b>Rareza:</b> ${RN2[conf]} <span class="sub">(confirmada)</span></div>`
-  :`<div class="rarb"><b>Rareza:</b> ${['S','E','L'].map(k=>`<button class="rv ${k}${mine===k?' me':''}" data-r="${k}" ${API?'':'disabled'}>${RN2[k]} <small>${v[k]||0}</small></button>`).join('')}<div class="sub">¿La tienes en el juego? Vota sus estrellas: ★★ Especial · ★★★★ Épica · ★★★★★ Legendaria.${mine?' Tu voto: '+RN2[mine]+' (puedes cambiarlo).':''}</div><span id="rmsg2"></span></div>`;
+  :`<div class="rarb"><b>Rareza:</b> ${['S','E','L'].map(k=>`<button class="rv ${k}${mine===k?' me':''}" data-r="${k}" ${API?'':'disabled'}>${RN2[k]} <small>${v[k]||0}</small></button>`).join('')}<div class="sub">¿La tienes en el juego? Vota sus estrellas: ★★ Especial · ★★★★ Épica · ★★★★★ Legendaria.${mine?' Tu voto: '+RN2[mine]+'. Toca otra para cambiarlo o la misma para quitarlo.':''}</div><span id="rmsg2"></span></div>`;
  nm.innerHTML=`<div class="box"><h3>📝 ${esc(n)}</h3>${rarHtml}<div class="sub">Notas del gremio: cambios del Reborn, consejos, lo que hayan visto.</div>
  ${L.length?L.map(x=>`<div class="nt">${esc(x.nota)}<small>${esc(x.jugador)} · ${esc(x.fecha)}</small></div>`).join(''):'<div class="sub"><i>Todavía no hay notas para esta unidad.</i></div>'}
  ${API?`<textarea id="ntx" rows="3" maxlength="500" placeholder="Ej.: En el Reborn tiene 27 de ataque (antes 26)."></textarea>
@@ -8110,8 +8110,8 @@ function openNotes(id){cur=id; const c=document.querySelector(`.card[data-id="${
  :`<div class="sub">Esta versión no está conectada a la base del gremio.</div><div class="btns"><button class="close" id="ncl">Cerrar</button></div>`}</div>`;
  nm.hidden=false; $('ncl').onclick=()=>{nm.hidden=true;cur=null};
  nm.querySelectorAll('.rv').forEach(b=>b.onclick=async()=>{const s=window.necrosSesion&&necrosSesion(), m=$('rmsg2'); if(!s){nm.hidden=true;necrosLogin();return}
-  nm.querySelectorAll('.rv').forEach(x=>x.disabled=true); m.textContent='Guardando voto…'; m.style.color='#4bd57f';
-  try{const d=await (await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tipo:'rareza',gremio:s.gremio,jugador:s.usuario,unidad_id:id,unidad:n,rareza:b.dataset.r})})).json();
+  nm.querySelectorAll('.rv').forEach(x=>x.disabled=true); m.textContent=b.classList.contains('me')?'Quitando voto…':'Guardando voto…'; m.style.color='#4bd57f';
+  try{const d=await (await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tipo:'rareza',gremio:s.gremio,jugador:s.usuario,unidad_id:id,unidad:n,rareza:b.dataset.r,quitar:b.classList.contains('me')})})).json();
    if(d.ok){await loadNotas()} else {m.textContent=d.error||'No se pudo guardar.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}
   }catch(e){m.textContent='Error de conexión.';m.style.color='#f08a7a';nm.querySelectorAll('.rv').forEach(x=>x.disabled=false)}});
  if(API) $('nsend').onclick=async()=>{const t=$('ntx').value.trim(), s=window.necrosSesion&&necrosSesion(), m=$('nmsg');
